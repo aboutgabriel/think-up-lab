@@ -22,7 +22,7 @@ export default function Hero() {
 
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="text-left">
+          <div className="text-left order-2 md:order-1">
             <h1
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
@@ -68,7 +68,7 @@ export default function Hero() {
           </div>
 
           <div
-            className="opacity-0 animate-fade-in flex justify-center md:justify-end"
+            className="opacity-0 animate-fade-in flex justify-center md:justify-end order-1 md:order-2"
             style={{ animationDelay: "0.5s" }}
           >
             <div className="w-full max-w-md md:max-w-lg animate-float">
