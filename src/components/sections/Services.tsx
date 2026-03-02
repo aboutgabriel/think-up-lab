@@ -12,9 +12,6 @@ import {
 const services = [
   {
     level: 1,
-    color: "green",
-    colorClass: "bg-green-500",
-    borderClass: "border-green-500/30",
     icon: Globe,
     name: "Site Institucional",
     description: "Sites modernos e objetivos para apresentar sua empresa, seus serviços e facilitar o contato com clientes.",
@@ -37,9 +34,6 @@ const services = [
   },
   {
     level: 2,
-    color: "yellow",
-    colorClass: "bg-yellow-500",
-    borderClass: "border-yellow-500/30",
     icon: Database,
     name: "Sistema de Gestão Essencial",
     description: "Sistemas simples para substituir planilhas e organizar processos do dia a dia com mais controle e menos retrabalho.",
@@ -62,9 +56,6 @@ const services = [
   },
   {
     level: 3,
-    color: "blue",
-    colorClass: "bg-blue-500",
-    borderClass: "border-blue-500/30",
     icon: Puzzle,
     name: "Sistema Sob Medida",
     description: "Desenvolvimento de sistemas totalmente personalizados, criados especificamente para a realidade e os processos do seu negócio.",
@@ -96,14 +87,14 @@ const Services = () => {
   };
 
   return (
-    <section id="solucoes" className="py-20 md:py-32 bg-secondary/30">
+    <section id="solucoes" className="py-20 md:py-32 bg-navy">
       <div className="container">
         {/* Header da Seção */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             Nossas Soluções
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-white/60 text-lg">
             Cada negócio está em um momento diferente. Por isso, oferecemos soluções em níveis — do essencial ao totalmente personalizado.
           </p>
         </div>
@@ -114,13 +105,15 @@ const Services = () => {
             <Card
               key={service.name}
               className={`relative border-0 shadow-card transition-all duration-300 hover:-translate-y-1 opacity-0 animate-fade-in-up flex flex-col ${
-                service.popular ? "ring-2 ring-primary shadow-primary/20" : ""
+                service.popular
+                  ? "ring-2 ring-primary shadow-primary/20"
+                  : "bg-card"
               }`}
               style={{ animationDelay: `${0.1 * index}s` }}
             >
-              {/* Badge de cor no topo */}
-              <div className={`h-1.5 w-full ${service.colorClass} rounded-t-lg`} />
-              
+              {/* Barra sutil no topo */}
+              <div className={`h-1 w-full rounded-t-lg ${service.popular ? "gradient-primary" : "bg-primary/20"}`} />
+
               {service.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
                   <div className="flex items-center gap-1 px-3 py-1 rounded-full gradient-primary text-primary-foreground text-xs font-medium">
@@ -132,10 +125,10 @@ const Services = () => {
 
               <CardHeader className="pb-2 pt-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className={`w-10 h-10 rounded-lg ${service.colorClass}/10 flex items-center justify-center`}>
-                    <service.icon className={`w-5 h-5 text-${service.color}-500`} />
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <service.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <Badge variant="outline" className={`${service.borderClass} text-${service.color}-600`}>
+                  <Badge variant="outline" className="border-primary/30 text-primary">
                     Nível {service.level}
                   </Badge>
                 </div>
@@ -149,8 +142,8 @@ const Services = () => {
 
               <CardContent className="flex-1 flex flex-col">
                 {/* Accordion para detalhes */}
-                <Accordion type="single" collapsible className="w-full mb-4">
-                  <AccordionItem value="when" className="border-b-0">
+                <Accordion type="multiple" className="w-full mb-4">
+                  <AccordionItem value={`when-${index}`} className="border-b-0">
                     <AccordionTrigger className="text-sm font-medium py-2 hover:no-underline">
                       Quando indicar
                     </AccordionTrigger>
@@ -165,8 +158,8 @@ const Services = () => {
                       </ul>
                     </AccordionContent>
                   </AccordionItem>
-                  
-                  <AccordionItem value="features" className="border-b-0">
+
+                  <AccordionItem value={`features-${index}`} className="border-b-0">
                     <AccordionTrigger className="text-sm font-medium py-2 hover:no-underline">
                       O que inclui
                     </AccordionTrigger>
@@ -189,7 +182,7 @@ const Services = () => {
                     <Clock className="w-4 h-4" />
                     <span>{service.deadline}</span>
                   </div>
-                  
+
                   <div>
                     <span className="text-xs text-muted-foreground">A partir de</span>
                     <div className="text-2xl font-bold text-foreground">
@@ -201,7 +194,7 @@ const Services = () => {
                     className={`w-full ${
                       service.popular
                         ? "gradient-primary text-primary-foreground shadow-primary hover:opacity-90"
-                        : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                        : "bg-transparent border border-primary text-primary hover:bg-primary/10"
                     }`}
                     onClick={scrollToContact}
                   >
@@ -212,7 +205,6 @@ const Services = () => {
             </Card>
           ))}
         </div>
-
       </div>
     </section>
   );
