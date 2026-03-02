@@ -1,13 +1,17 @@
 import { useState } from "react";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -15,10 +19,24 @@ const Contact = () => {
     problem: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Apenas visual - simula o envio
-    setIsSubmitted(true);
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData,
+      });
+      if (error) throw error;
+      setIsSubmitted(true);
+    } catch {
+      toast({
+        title: "Erro ao enviar",
+        description: "Não foi possível enviar sua mensagem. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -49,23 +67,19 @@ const Contact = () => {
                   setIsSubmitted(false);
                   setFormData({ name: "", company: "", contact: "", problem: "" });
                 }}>
-
                 Enviar outra mensagem
               </Button>
             </CardContent>
           </Card>
         </div>
       </section>);
-
   }
 
   return (
     <section id="contato" className="py-20 md:py-32 bg-secondary/30">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">Vamos conversar?
-
-          </h2>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">Vamos conversar?</h2>
           <p className="text-muted-foreground text-lg">
             Conte sobre sua necessidade e vamos encontrar a melhor solução para seu negócio.
           </p>
@@ -84,8 +98,8 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                   className="bg-secondary/50 border-border focus:border-primary" />
-
               </div>
 
               <div className="space-y-2">
@@ -97,8 +111,8 @@ const Contact = () => {
                   placeholder="Nome da sua empresa"
                   value={formData.company}
                   onChange={handleChange}
+                  disabled={isLoading}
                   className="bg-secondary/50 border-border focus:border-primary" />
-
               </div>
 
               <div className="space-y-2">
@@ -111,8 +125,8 @@ const Contact = () => {
                   value={formData.contact}
                   onChange={handleChange}
                   required
+                  disabled={isLoading}
                   className="bg-secondary/50 border-border focus:border-primary" />
-
               </div>
 
               <div className="space-y-2">
@@ -125,25 +139,33 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={4}
+                  disabled={isLoading}
                   className="bg-secondary/50 border-border focus:border-primary resize-none" />
-
               </div>
 
               <Button
                 type="submit"
                 size="lg"
+                disabled={isLoading}
                 className="w-full gradient-primary text-primary-foreground shadow-primary hover:opacity-90 transition-all">
-
-                <span className="md:hidden">Enviar mensagem</span>
-                <span className="hidden md:inline">Vamos conversar sobre sua necessidade</span>
-                <Send className="ml-2 w-4 h-4" />
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 w-4 h-4 animate-spin" />
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    <span className="md:hidden">Enviar mensagem</span>
+                    <span className="hidden md:inline">Vamos conversar sobre sua necessidade</span>
+                    <Send className="ml-2 w-4 h-4" />
+                  </>
+                )}
               </Button>
             </form>
           </CardContent>
         </Card>
       </div>
     </section>);
-
 };
 
 export default Contact;
