@@ -1,4 +1,4 @@
-import { ArrowRight, Zap, Settings2, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FunnelIllustration from "@/components/ui/FunnelIllustration";
 
@@ -7,12 +7,6 @@ export default function Hero() {
     const element = document.querySelector("#contato");
     if (element) element.scrollIntoView({ behavior: "smooth" });
   };
-
-  const tags = [
-    { icon: Zap, title: "Entrega Rápida" },
-    { icon: Settings2, title: "100% Sob Medida" },
-    { icon: Sparkles, title: "Inteligência Artificial" },
-  ];
 
   return (
     <section
@@ -29,18 +23,6 @@ export default function Hero() {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="text-left">
-            <div className="flex flex-wrap gap-3 mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-              {tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm font-medium text-white/90"
-                >
-                  <tag.icon className="w-4 h-4 text-primary" />
-                  {tag.title}
-                </span>
-              ))}
-            </div>
-
             <h1
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
