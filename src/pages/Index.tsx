@@ -21,6 +21,14 @@ const Index = () => {
       <main>
         <Hero />
 
+        {/* Gradient transition from Hero navy to light background */}
+        <div
+          className="h-20 md:h-[120px]"
+          style={{
+            background: "linear-gradient(to bottom, hsl(222, 50%, 12%), hsl(var(--background)))",
+          }}
+        />
+
         <Services />
         <HowItWorks />
 
