@@ -1,22 +1,16 @@
 
 
-## Remover o gradiente de transição entre Hero e Soluções
+## Remover os tags do Hero
 
-O div decorativo com gradiente entre o Hero e a seção de Soluções será removido.
+Remover os tres badges/tags ("Entrega Rapida", "100% Sob Medida", "Inteligencia Artificial") que aparecem acima do titulo na secao Hero.
 
-### Alteração
+### Alteracao
 
-**Arquivo: `src/pages/Index.tsx`**
+**Arquivo: `src/components/sections/Hero.tsx`**
 
-- Deletar o bloco do gradiente (linhas 25-30):
-```
-<div
-  className="h-20 md:h-[120px]"
-  style={{
-    background: "linear-gradient(to bottom, hsl(222, 50%, 12%), hsl(var(--background)))",
-  }}
-/>
-```
+- Remover a definicao do array `tags` (linhas 14-18)
+- Remover o bloco JSX que renderiza os tags com `tags.map(...)` (linhas 34-46)
+- Remover os imports nao utilizados: `Zap`, `Settings2`, `Sparkles` (linha 1)
 
-A transição entre o Hero e a seção de Soluções ficará direta, sem faixa intermediária.
+O titulo, subtitulo e botoes permanecem inalterados.
 
