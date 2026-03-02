@@ -1,4 +1,3 @@
-import { Linkedin, Twitter, Facebook } from "lucide-react";
 import footerLogo from "@/assets/footer-logo.png";
 
 const navLinks = [
@@ -7,12 +6,6 @@ const navLinks = [
   { href: "#como-funciona", label: "Como Funciona" },
   { href: "#investimento", label: "Investimento" },
   { href: "#contato", label: "Contato" },
-];
-
-const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Facebook, label: "Facebook", href: "#" },
 ];
 
 const Footer = () => {
@@ -39,19 +32,6 @@ const Footer = () => {
               Transformando planilhas em sistemas simples e eficientes para pequenas e médias empresas.
             </p>
 
-            {/* Social icons */}
-            <div className="flex gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-9 h-9 rounded-lg border border-white/15 flex items-center justify-center text-white/60 hover:text-primary hover:border-primary/50 transition-colors"
-                >
-                  <social.icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Links */}
