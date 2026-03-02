@@ -1,26 +1,22 @@
 
 
-## Corrigir o efeito visual dos cards de preço no grid
+## Remover o gradiente de transição entre Hero e Soluções
 
-### Problema real
+O div decorativo com gradiente entre o Hero e a seção de Soluções será removido.
 
-O accordion funciona corretamente (cada card e independente). O problema e visual: o CSS Grid por padrao usa `align-items: stretch`, fazendo todos os cards da mesma linha terem a mesma altura. Quando um accordion abre, o card fica mais alto, e os outros cards esticam junto, empurrando o preco/botao para baixo e dando a impressao de que "algo abriu" nos outros cards.
+### Alteração
 
-### Solucao
+**Arquivo: `src/pages/Index.tsx`**
 
-**Arquivo: `src/components/sections/Services.tsx`** (linha 103)
-
-- Adicionar `items-start` ao container do grid para que cada card tenha sua propria altura independente, sem esticar para acompanhar os vizinhos
-
-Antes:
+- Deletar o bloco do gradiente (linhas 25-30):
 ```
-<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-```
-
-Depois:
-```
-<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+<div
+  className="h-20 md:h-[120px]"
+  style={{
+    background: "linear-gradient(to bottom, hsl(222, 50%, 12%), hsl(var(--background)))",
+  }}
+/>
 ```
 
-Essa unica mudanca resolve o problema: quando um accordion abrir, apenas aquele card vai crescer, sem afetar os outros.
+A transição entre o Hero e a seção de Soluções ficará direta, sem faixa intermediária.
 
