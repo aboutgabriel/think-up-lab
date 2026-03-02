@@ -6,6 +6,7 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import TabletMockup from "@/components/ui/TabletMockup";
+import PhoneMockup from "@/components/ui/PhoneMockup";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -66,9 +67,14 @@ const Index = () => {
                 </Button>
               </div>
 
-              {/* Right: tablet */}
-              <div className="flex justify-center">
-                <TabletMockup />
+              {/* Right: devices */}
+              <div className="flex justify-center items-start relative">
+                <div className="max-w-md">
+                  <TabletMockup />
+                </div>
+                <div className="hidden md:block -ml-8 mt-12 relative z-10">
+                  <PhoneMockup />
+                </div>
               </div>
             </div>
           </div>
