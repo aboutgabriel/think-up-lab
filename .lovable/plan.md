@@ -1,19 +1,26 @@
 
-## Criar gradiente suave entre o Hero e a seção de Soluções
 
-Atualmente o Hero tem fundo navy escuro (`bg-navy`) e a seção de Soluções tem fundo claro (`bg-background`). A transição entre eles é abrupta. A ideia é criar um degradê suave que conecte visualmente as duas seções.
+## Corrigir o efeito visual dos cards de preço no grid
 
-### Abordagem
+### Problema real
 
-Em vez de alterar o fundo do Hero ou da seção de Soluções, vamos adicionar uma faixa de transição entre eles usando um `div` com gradiente CSS que vai do navy para o fundo claro do site.
+O accordion funciona corretamente (cada card e independente). O problema e visual: o CSS Grid por padrao usa `align-items: stretch`, fazendo todos os cards da mesma linha terem a mesma altura. Quando um accordion abre, o card fica mais alto, e os outros cards esticam junto, empurrando o preco/botao para baixo e dando a impressao de que "algo abriu" nos outros cards.
 
-### Alterações
+### Solucao
 
-**Arquivo: `src/pages/Index.tsx`**
+**Arquivo: `src/components/sections/Services.tsx`** (linha 103)
 
-- Adicionar um `div` decorativo entre `<Hero />` e `<Services />` com as seguintes propriedades:
-  - Altura de ~120px (responsiva: ~80px no mobile, ~120px no desktop)
-  - Gradiente vertical: de `hsl(222, 50%, 12%)` (navy, mesma cor do Hero) para `hsl(var(--background))` (cor de fundo padrão do site)
-  - Sem conteúdo, apenas decorativo
+- Adicionar `items-start` ao container do grid para que cada card tenha sua propria altura independente, sem esticar para acompanhar os vizinhos
 
-Isso cria uma transição visual fluida sem alterar nenhuma das seções existentes.
+Antes:
+```
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+```
+
+Depois:
+```
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-start">
+```
+
+Essa unica mudanca resolve o problema: quando um accordion abrir, apenas aquele card vai crescer, sem afetar os outros.
+
