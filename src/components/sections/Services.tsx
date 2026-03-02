@@ -87,14 +87,14 @@ const Services = () => {
   };
 
   return (
-    <section id="solucoes" className="py-20 md:py-32 bg-navy">
+    <section id="solucoes" className="py-20 md:py-32 bg-background">
       <div className="container">
         {/* Header da Seção */}
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
             Nossas Soluções
           </h2>
-          <p className="text-white/60 text-lg">
+          <p className="text-muted-foreground text-lg">
             Cada negócio está em um momento diferente. Por isso, oferecemos soluções em níveis — do essencial ao totalmente personalizado.
           </p>
         </div>
