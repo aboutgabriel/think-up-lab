@@ -22,8 +22,6 @@ import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import ProjectImageCarousel from "@/components/ui/ProjectImageCarousel";
 
-
-
 import baba1 from "@/assets/baba-bacana-1.jpeg";
 import baba2 from "@/assets/baba-bacana-2.jpeg";
 import baba3 from "@/assets/baba-bacana-3.jpeg";
@@ -164,7 +162,7 @@ export default function BabaDoBacana() {
         </div>
       </section>
 
-      {/* Problema */}
+      {/* Problema — Antes vs Depois */}
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center mb-14">
@@ -172,34 +170,53 @@ export default function BabaDoBacana() {
               Cansado dessa rotina?
             </h2>
             <p className="text-muted-foreground text-lg">
-              Se você organiza um baba ou time amador, provavelmente vive esses
-              problemas toda semana.
+              Se você organiza um baba ou time amador, provavelmente vive esses problemas toda semana.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {problems.map((item, i) => (
-              <div
-                key={item.title}
-                className="bg-card rounded-2xl border border-destructive/20 p-6 shadow-card opacity-0 animate-fade-in-up"
-                style={{ animationDelay: `${0.1 * i}s` }}
-              >
-                <div className="w-12 h-12 rounded-xl bg-destructive/10 flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-destructive" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto items-start">
+            {/* Antes */}
+            <div className="space-y-5">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-10 h-10 rounded-full bg-destructive/15 flex items-center justify-center">
+                  <XCircle className="w-5 h-5 text-destructive" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {item.description}
-                </p>
+                <h3 className="text-lg font-bold text-destructive">Antes</h3>
               </div>
-            ))}
+              {problems.map((item) => (
+                <div key={item.title} className="flex items-start gap-3">
+                  <item.icon className="w-5 h-5 text-destructive/70 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground text-sm">{item.title}</p>
+                    <p className="text-muted-foreground text-sm">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Depois */}
+            <div className="space-y-5">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-primary">Depois</h3>
+              </div>
+              {features.slice(0, 4).map((item) => (
+                <div key={item.title} className="flex items-start gap-3">
+                  <item.icon className="w-5 h-5 text-primary/70 mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-medium text-foreground text-sm">{item.title}</p>
+                    <p className="text-muted-foreground text-sm">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Solução */}
+      {/* Solução — Screenshots + Features */}
       <section className="py-20 md:py-28 bg-secondary/40">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center mb-14">
@@ -207,34 +224,33 @@ export default function BabaDoBacana() {
               A solução completa para seu time
             </h2>
             <p className="text-muted-foreground text-lg">
-              Tudo que você precisa para organizar seu grupo esportivo em um só
-              sistema.
+              Tudo que você precisa para organizar seu grupo esportivo em um só sistema.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {features.map((feat, i) => (
-              <div
-                key={feat.title}
-                className="bg-card rounded-2xl border border-primary/20 p-7 shadow-card hover:shadow-primary transition-all duration-300 hover:-translate-y-1 opacity-0 animate-fade-in-up"
-                style={{ animationDelay: `${0.1 * i}s` }}
-              >
-                <div className="w-12 h-12 rounded-xl border border-primary/30 bg-accent flex items-center justify-center mb-5">
-                  <feat.icon className="w-6 h-6 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto items-center">
+            <div className="w-full max-w-[200px] mx-auto">
+              <ProjectImageCarousel images={[baba1, baba2, baba3]} alt="Baba do Bacana — telas do app" />
+            </div>
+
+            <div className="space-y-6">
+              {features.map((feat) => (
+                <div key={feat.title} className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg border border-primary/30 bg-accent flex items-center justify-center flex-shrink-0">
+                    <feat.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-sm mb-0.5">{feat.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{feat.description}</p>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">
-                  {feat.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {feat.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Como Funciona */}
+      {/* Como Funciona — Timeline */}
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center mb-14">
@@ -246,27 +262,22 @@ export default function BabaDoBacana() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {steps.map((step, i) => (
-              <div
-                key={step.number}
-                className="relative bg-card rounded-2xl border border-primary/20 p-8 shadow-card hover:shadow-primary transition-all duration-300 hover:-translate-y-1 opacity-0 animate-fade-in-up"
-                style={{ animationDelay: `${0.15 * i}s` }}
-              >
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full gradient-primary flex items-center justify-center text-xs font-bold text-primary-foreground shadow-primary">
-                  {step.number}
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+              {/* Connecting line (desktop only) */}
+              <div className="hidden md:block absolute top-7 left-[16.67%] right-[16.67%] h-0.5 bg-primary/20" />
+
+              {steps.map((step) => (
+                <div key={step.number} className="flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center text-primary-foreground font-bold text-lg shadow-primary mb-4 relative z-10">
+                    {step.number}
+                  </div>
+                  <step.icon className="w-6 h-6 text-primary mb-3" />
+                  <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed max-w-[240px]">{step.description}</p>
                 </div>
-                <div className="w-14 h-14 rounded-xl border border-primary/30 bg-accent flex items-center justify-center mb-6">
-                  <step.icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -305,11 +316,11 @@ export default function BabaDoBacana() {
         </div>
       </section>
 
-      {/* O Case */}
+      {/* O Case — Bloco único consolidado */}
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
               <Badge variant="outline" className="mb-4 text-primary border-primary/30">
                 📋 Case completo
               </Badge>
@@ -318,75 +329,69 @@ export default function BabaDoBacana() {
               </h2>
             </div>
 
-            <div className="space-y-8">
-              {/* O Problema */}
-              <div className="bg-card rounded-2xl border border-destructive/20 p-8 shadow-card">
-                <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
-                  <XCircle className="w-5 h-5 text-destructive" />
-                  O Problema
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Dificuldade em controlar presença e pagamento de um grupo que joga futebol semanalmente.
-                </p>
-              </div>
-
-              {/* A Solução */}
-              <div className="bg-card rounded-2xl border border-primary/20 p-8 shadow-card">
-                <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  A Solução
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Web app onde membros confirmam presença nos próximos jogos e enviam comprovantes de pagamento, facilitando o acompanhamento da diretoria.
-                </p>
-              </div>
-
-              {/* Funcionalidades */}
-              <div className="bg-card rounded-2xl border border-primary/20 p-8 shadow-card">
-                <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
-                  <ClipboardList className="w-5 h-5 text-primary" />
-                  Funcionalidades
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Confirmação de presença",
-                    "Envio de comprovante de pagamento",
-                    "Registro organizado de membros",
-                    "Controle de inadimplência",
-                  ].map((feat) => (
-                    <li key={feat} className="flex items-center gap-3 text-muted-foreground">
-                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Impacto */}
-              <div className="bg-card rounded-2xl border border-primary/20 p-8 shadow-card">
-                <h3 className="text-lg font-bold text-foreground mb-5 flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-primary" />
-                  Impacto Gerado
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  {[
-                    "Menos mensagens no WhatsApp",
-                    "Menos retrabalho manual",
-                    "Mais organização e previsibilidade",
-                  ].map((impact) => (
-                    <div key={impact} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <TrendingUp className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      {impact}
-                    </div>
-                  ))}
+            <div className="bg-card rounded-2xl border border-border shadow-card overflow-hidden">
+              {/* Problema & Solução */}
+              <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-2 mb-3">
+                    <XCircle className="w-5 h-5 text-destructive" />
+                    <h3 className="font-bold text-foreground">O Problema</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Dificuldade em controlar presença e pagamento de um grupo que joga futebol semanalmente.
+                  </p>
+                </div>
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-2 mb-3">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                    <h3 className="font-bold text-foreground">A Solução</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Web app onde membros confirmam presença nos próximos jogos e enviam comprovantes de pagamento.
+                  </p>
                 </div>
               </div>
 
-              {/* Ver projeto */}
-              <div className="text-center pt-4">
+              {/* Divisória */}
+              <div className="border-t border-border" />
+
+              {/* Funcionalidades & Impacto */}
+              <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-2 mb-4">
+                    <ClipboardList className="w-5 h-5 text-primary" />
+                    <h3 className="font-bold text-foreground">Funcionalidades</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {["Confirmação de presença", "Envio de comprovante de pagamento", "Registro de membros", "Controle de inadimplência"].map((feat) => (
+                      <li key={feat} className="flex items-center gap-2 text-muted-foreground text-sm">
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center gap-2 mb-4">
+                    <TrendingUp className="w-5 h-5 text-primary" />
+                    <h3 className="font-bold text-foreground">Impacto Gerado</h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {["Menos mensagens no WhatsApp", "Menos retrabalho manual", "Mais organização e previsibilidade"].map((impact) => (
+                      <li key={impact} className="flex items-center gap-2 text-muted-foreground text-sm">
+                        <TrendingUp className="w-4 h-4 text-primary flex-shrink-0" />
+                        {impact}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="border-t border-border p-6 text-center bg-secondary/30">
                 <Button
                   variant="outline"
-                  className="rounded-full px-8 py-6 text-base border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="rounded-full px-8 py-5 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                   asChild
                 >
                   <a href="https://babadobacana.lovable.app/" target="_blank" rel="noopener noreferrer">
@@ -401,15 +406,14 @@ export default function BabaDoBacana() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-secondary/40">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Quer esse sistema para o seu time?
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Entre em contato e vamos montar a solução ideal para o seu grupo
-              esportivo.
+              Entre em contato e vamos montar a solução ideal para o seu grupo esportivo.
             </p>
             <Button
               onClick={scrollToContact}
