@@ -1,18 +1,30 @@
 
-## Reorganização do Carrossel e Ajustes de Layout
+## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-Com base no seu pedido, vou remover as imagens da seção inicial, realocar o carrossel para a seção "O Case" e ajustar os layouts das seções afetadas para manter a harmonia visual.
+Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
 
-### Mudanças que serão feitas:
+### Alteracoes
 
-**1. Seção "Hero" (Header)**
-- Remover o componente `ProjectImageCarousel` do topo.
-- Ajustar o layout do texto e botões para ficarem centralizados, já que não haverá mais uma imagem dividindo o espaço em duas colunas. Isso criará uma introdução mais limpa e direta.
+**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
 
-**2. Seção "Solução"**
-- Como o carrossel será movido para o Case, vou retirá-lo desta seção.
-- As funcionalidades da solução serão reorganizadas em um grid (por exemplo, 2 ou 3 colunas) para preencher melhor o espaço da tela, mantendo a leitura fácil e visual.
+Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
+- Frame do iPhone com notch/Dynamic Island
+- Tela com header "Dashboard" e hamburger menu
+- 2 KPI cards empilhados (Receita e Pedidos)
+- Mini grafico de barras verticais
+- Mini lista de categorias
+- Mesma paleta de cores do tablet (teal, navy, laranja)
 
-**3. Seção "O Case"**
-- Vou integrar o carrossel dentro do bloco de "Case completo".
-- O layout do bloco do Case será ajustado para exibir o carrossel (telas do app) lado a lado com as informações descritivas (O Problema, A Solução, Funcionalidades e Impacto Gerado), criando uma apresentação de estudo de caso rica e visual no final da página.
+**2. Arquivo: `src/pages/Index.tsx`**
+
+Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
+- Importar `PhoneMockup`
+- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
+- No mobile, empilhar verticalmente ou mostrar so o tablet
+
+### Detalhes tecnicos
+
+- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
+- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
+- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
+- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
