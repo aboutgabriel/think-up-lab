@@ -1,28 +1,30 @@
 
+## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-## Redesign: Mais visual, menos cards
+Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
 
-A pagina atual tem muitas seções com grids de cards repetitivos (4 problemas + 5 features + 3 steps + 3 resultados + 4 cards do case). Vou consolidar e tornar mais visual.
+### Alteracoes
 
-### Mudancas
+**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
 
-**1. Seção "Problema" — layout antes/depois em vez de 4 cards**
-- Substituir os 4 cards por um layout de 2 colunas: lado esquerdo com uma lista simples (icone + texto inline) dos problemas, lado direito com uma ilustracao visual (seta apontando para a solucao ou um comparativo "Antes vs Depois" com icones WhatsApp caótico vs sistema organizado).
+Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
+- Frame do iPhone com notch/Dynamic Island
+- Tela com header "Dashboard" e hamburger menu
+- 2 KPI cards empilhados (Receita e Pedidos)
+- Mini grafico de barras verticais
+- Mini lista de categorias
+- Mesma paleta de cores do tablet (teal, navy, laranja)
 
-**2. Seção "Solução" — combinar features com screenshots**
-- Em vez de 5 cards separados, usar layout 2 colunas: esquerda com o carrossel de screenshots do app (reutilizar as imagens), direita com lista de features (icone + titulo + descrição inline, sem cards). Mais compacto e visual.
+**2. Arquivo: `src/pages/Index.tsx`**
 
-**3. Seção "Como Funciona" — timeline horizontal em vez de 3 cards**
-- Substituir os 3 cards por uma timeline/stepper horizontal com números conectados por linhas, icone e texto abaixo de cada ponto. Sem bordas de card.
+Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
+- Importar `PhoneMockup`
+- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
+- No mobile, empilhar verticalmente ou mostrar so o tablet
 
-**4. Seção "Resultados" — manter (já é visual, sem cards)**
-- Sem mudanças, já funciona bem.
+### Detalhes tecnicos
 
-**5. Seção "Case" — consolidar 4 cards em 1 bloco único**
-- Unificar Problema, Solução, Funcionalidades e Impacto em um único card com divisórias internas, reduzindo de 4 cards para 1 bloco visual coeso.
-
-### Resultado
-- De ~15 cards para ~1 card + listas visuais e layouts lado a lado
-- Mais screenshots/elementos visuais integrados ao conteúdo
-- Página mais fluida e menos repetitiva
-
+- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
+- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
+- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
+- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
