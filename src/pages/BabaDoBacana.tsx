@@ -301,6 +301,101 @@ export default function BabaDoBacana() {
         </div>
       </section>
 
+      {/* O Case */}
+      <section className="py-20 md:py-28">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-14">
+              <Badge variant="outline" className="mb-4 text-primary border-primary/30">
+                📋 Case completo
+              </Badge>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                O Case: Baba do Bacana
+              </h2>
+            </div>
+
+            <div className="space-y-8">
+              {/* O Problema */}
+              <div className="bg-card rounded-2xl border border-destructive/20 p-8 shadow-card">
+                <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
+                  <XCircle className="w-5 h-5 text-destructive" />
+                  O Problema
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Dificuldade em controlar presença e pagamento de um grupo que joga futebol semanalmente.
+                </p>
+              </div>
+
+              {/* A Solução */}
+              <div className="bg-card rounded-2xl border border-primary/20 p-8 shadow-card">
+                <h3 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  A Solução
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Web app onde membros confirmam presença nos próximos jogos e enviam comprovantes de pagamento, facilitando o acompanhamento da diretoria.
+                </p>
+              </div>
+
+              {/* Funcionalidades */}
+              <div className="bg-card rounded-2xl border border-primary/20 p-8 shadow-card">
+                <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
+                  <ClipboardList className="w-5 h-5 text-primary" />
+                  Funcionalidades
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    "Confirmação de presença",
+                    "Envio de comprovante de pagamento",
+                    "Registro organizado de membros",
+                    "Controle de inadimplência",
+                  ].map((feat) => (
+                    <li key={feat} className="flex items-center gap-3 text-muted-foreground">
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Impacto */}
+              <div className="bg-card rounded-2xl border border-primary/20 p-8 shadow-card">
+                <h3 className="text-lg font-bold text-foreground mb-5 flex items-center gap-2">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                  Impacto Gerado
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {[
+                    "Menos mensagens no WhatsApp",
+                    "Menos retrabalho manual",
+                    "Mais organização e previsibilidade",
+                  ].map((impact) => (
+                    <div key={impact} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <TrendingUp className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                      {impact}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Ver projeto */}
+              <div className="text-center pt-4">
+                <Button
+                  variant="outline"
+                  className="rounded-full px-8 py-6 text-base border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                  asChild
+                >
+                  <a href="https://babadobacana.lovable.app/" target="_blank" rel="noopener noreferrer">
+                    Ver projeto
+                    <ExternalLink className="ml-2 w-4 h-4" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Final */}
       <section className="py-20 md:py-28">
         <div className="container">
