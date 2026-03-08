@@ -154,7 +154,7 @@ export default function BabaDoBacana() {
               </Button>
             </div>
 
-            <div className="w-full max-w-[182px] lg:max-w-[210px] mx-auto lg:mx-0">
+            <div className="w-full max-w-[200px] lg:max-w-[231px] mx-auto lg:ml-auto lg:mr-0">
               <ProjectImageCarousel
                 images={[baba1, baba2, baba3]}
                 alt="Baba do Bacana"
