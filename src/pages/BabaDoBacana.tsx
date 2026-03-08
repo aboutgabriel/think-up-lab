@@ -158,7 +158,7 @@ export default function BabaDoBacana() {
               <ProjectImageCarousel
                 images={[baba1, baba2, baba3]}
                 alt="Baba do Bacana"
-                className="max-w-[260px] md:max-w-[300px]"
+                className="max-w-[320px] md:max-w-[380px]"
               />
             </div>
           </div>
