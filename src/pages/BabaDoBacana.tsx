@@ -154,11 +154,10 @@ export default function BabaDoBacana() {
               </Button>
             </div>
 
-            <div className="flex justify-center">
+            <div className="w-full max-w-[480px] lg:max-w-full">
               <ProjectImageCarousel
                 images={[baba1, baba2, baba3]}
                 alt="Baba do Bacana"
-                className="max-w-[320px] md:max-w-[380px]"
               />
             </div>
           </div>
