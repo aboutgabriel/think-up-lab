@@ -1,30 +1,38 @@
 
-## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
+## Landing Page dedicada — Baba do Bacana
 
-### Alteracoes
+Criar uma nova rota `/baba-do-bacana` com uma landing page completa focada em vender o sistema para outros times/grupos esportivos.
 
-**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
+### Estrutura da página
 
-Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
-- Frame do iPhone com notch/Dynamic Island
-- Tela com header "Dashboard" e hamburger menu
-- 2 KPI cards empilhados (Receita e Pedidos)
-- Mini grafico de barras verticais
-- Mini lista de categorias
-- Mesma paleta de cores do tablet (teal, navy, laranja)
+1. **Hero** — Fundo escuro (bg-navy) com headline chamativo: "Seu time merece mais organização" + subtítulo sobre o problema de gerenciar peladas via WhatsApp. CTA "Quero para o meu time". Carrossel das 3 screenshots existentes no lado direito.
 
-**2. Arquivo: `src/pages/Index.tsx`**
+2. **Problema** — Seção listando as dores comuns: controle de presença no WhatsApp, cobranças manuais, confusão com pagamentos, falta de histórico.
 
-Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
-- Importar `PhoneMockup`
-- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
-- No mobile, empilhar verticalmente ou mostrar so o tablet
+3. **Solução** — Explicação do sistema com as funcionalidades em cards com ícones:
+   - Confirmação de presença online
+   - Envio de comprovante de pagamento
+   - Controle de inadimplência
+   - Registro organizado de membros
+   - Painel da diretoria
 
-### Detalhes tecnicos
+4. **Como funciona** — 3 passos simples: (1) Cadastre seu time → (2) Convide os membros → (3) Gerencie tudo em um só lugar.
 
-- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
-- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
-- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
-- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
+5. **Resultados** — Seção de impacto com métricas/benefícios: menos mensagens no WhatsApp, menos retrabalho, mais previsibilidade.
+
+6. **CTA final** — "Quer esse sistema para o seu time?" com botão que redireciona para o formulário de contato da página principal (`/#contato`).
+
+7. **Footer** — Reutilizar o Footer existente.
+
+### Alterações técnicas
+
+**Novo arquivo: `src/pages/BabaDoBacana.tsx`**
+- Página completa com todas as seções acima
+- Importar Header e Footer existentes
+- Importar as imagens `baba-bacana-1/2/3.jpeg` e o `ProjectImageCarousel`
+- Usar mesma paleta de cores e padrões visuais do site (gradient-primary, bg-navy, cards com border-primary/20)
+
+**Arquivo: `src/App.tsx`**
+- Adicionar rota `/baba-do-bacana` apontando para o novo componente
+
