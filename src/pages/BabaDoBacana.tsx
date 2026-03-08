@@ -11,10 +11,16 @@ import {
   UserPlus,
   Settings,
   TrendingDown,
+  TrendingUp,
   Clock,
   BarChart3,
+  ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import Header from "@/components/sections/Header";
+import Footer from "@/components/sections/Footer";
+import ProjectImageCarousel from "@/components/ui/ProjectImageCarousel";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import ProjectImageCarousel from "@/components/ui/ProjectImageCarousel";
