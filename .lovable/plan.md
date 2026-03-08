@@ -1,30 +1,20 @@
 
-## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
+## Enriquecer a landing page do Baba do Bacana
 
-### Alteracoes
+A landing page `/baba-do-bacana` já existe com seções de marketing (Hero, Problema, Solução, Como Funciona, Resultados, CTA). O objetivo é adicionar o conteúdo detalhado do case que aparece na página `/projetos` — a estrutura de **Dor → Solução → Funcionalidades → Impacto** — integrado à landing page.
 
-**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
+### O que será feito
 
-Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
-- Frame do iPhone com notch/Dynamic Island
-- Tela com header "Dashboard" e hamburger menu
-- 2 KPI cards empilhados (Receita e Pedidos)
-- Mini grafico de barras verticais
-- Mini lista de categorias
-- Mesma paleta de cores do tablet (teal, navy, laranja)
+**Arquivo: `src/pages/BabaDoBacana.tsx`**
 
-**2. Arquivo: `src/pages/Index.tsx`**
+Adicionar uma nova seção **"O Case"** entre a seção de Resultados e o CTA final, com:
 
-Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
-- Importar `PhoneMockup`
-- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
-- No mobile, empilhar verticalmente ou mostrar so o tablet
+- **O Problema**: "Dificuldade em controlar presença e pagamento de um grupo que joga futebol semanalmente."
+- **A Solução**: "Web app onde membros confirmam presença nos próximos jogos e enviam comprovantes de pagamento, facilitando o acompanhamento da diretoria."
+- **Funcionalidades**: Lista com checks (confirmação de presença, envio de comprovante, registro de membros, controle de inadimplência)
+- **Impacto Gerado**: Card destacado com os 3 impactos (menos mensagens no WhatsApp, menos retrabalho manual, mais organização e previsibilidade)
+- **Botão "Ver projeto"** com link externo para `https://babadobacana.lovable.app/`
 
-### Detalhes tecnicos
+Seguirá o mesmo visual da página `/projetos` (badges, cards, ícones Check/TrendingUp), adaptado ao layout da landing page.
 
-- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
-- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
-- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
-- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
