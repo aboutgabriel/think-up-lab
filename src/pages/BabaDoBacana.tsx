@@ -27,54 +27,18 @@ import baba2 from "@/assets/baba-bacana-2.jpeg";
 import baba3 from "@/assets/baba-bacana-3.jpeg";
 
 const problems = [
-  {
-    icon: XCircle,
-    title: "Presença pelo WhatsApp",
-    description: "Lista de confirmados se perde entre memes, áudios e discussões infinitas.",
-  },
-  {
-    icon: CreditCard,
-    title: "Cobranças manuais",
-    description: "Cobrar mensalidade um por um, sem controle de quem já pagou.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Confusão com pagamentos",
-    description: "Comprovantes misturados no chat, impossível rastrear depois.",
-  },
-  {
-    icon: Clock,
-    title: "Sem histórico",
-    description: "Nenhum registro de presenças, pagamentos ou membros ao longo do tempo.",
-  },
+  { icon: XCircle, title: "Presença pelo WhatsApp" },
+  { icon: CreditCard, title: "Cobranças manuais" },
+  { icon: MessageSquare, title: "Pagamentos confusos" },
+  { icon: Clock, title: "Sem histórico" },
 ];
 
 const features = [
-  {
-    icon: CheckCircle,
-    title: "Confirmação de presença",
-    description: "Cada jogador confirma ou recusa direto no sistema, sem poluir o grupo.",
-  },
-  {
-    icon: CreditCard,
-    title: "Comprovante de pagamento",
-    description: "Envio e validação de comprovantes de forma organizada e rastreável.",
-  },
-  {
-    icon: Shield,
-    title: "Controle de inadimplência",
-    description: "Veja quem está em dia e quem está devendo — tudo em tempo real.",
-  },
-  {
-    icon: Users,
-    title: "Registro de membros",
-    description: "Cadastro completo com dados de cada jogador do time.",
-  },
-  {
-    icon: LayoutDashboard,
-    title: "Painel da diretoria",
-    description: "Visão geral de tudo: presenças, pagamentos, membros e mais.",
-  },
+  { icon: CheckCircle, title: "Confirmação de presença" },
+  { icon: CreditCard, title: "Comprovante de pagamento" },
+  { icon: Shield, title: "Controle de inadimplência" },
+  { icon: Users, title: "Registro de membros" },
+  { icon: LayoutDashboard, title: "Painel da diretoria" },
 ];
 
 const steps = [
