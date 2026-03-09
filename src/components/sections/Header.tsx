@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import headerLogo from "@/assets/grpm-logo.png";
 
@@ -7,6 +8,7 @@ const navLinks = [
   { href: "#solucoes", label: "Soluções" },
   { href: "#projetos", label: "Projetos" },
   { href: "#como-funciona", label: "Como Funciona" },
+  { href: "/baba-do-bacana", label: "Sistema de Gestão", isRoute: true },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -31,15 +33,25 @@ export default function Header() {
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.href}
-              onClick={() => scrollToSection(link.href)}
-              className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </button>
-          ))}
+          {navLinks.map((link) =>
+            link.isRoute ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <button
+                key={link.href}
+                onClick={() => scrollToSection(link.href)}
+                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </button>
+            )
+          )}
         </nav>
 
         <Button
@@ -61,15 +73,26 @@ export default function Header() {
       {isMenuOpen && (
         <nav className="md:hidden bg-background/95 backdrop-blur-md border-b border-border py-4">
           <div className="container flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-left text-foreground/70 hover:text-foreground transition-colors py-2"
-              >
-                {link.label}
-              </button>
-            ))}
+            {navLinks.map((link) =>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-left text-foreground/70 hover:text-foreground transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-left text-foreground/70 hover:text-foreground transition-colors py-2"
+                >
+                  {link.label}
+                </button>
+              )
+            )}
 
             <Button
               className="rounded-full gradient-primary text-primary-foreground w-full mt-2 hover:opacity-90 transition-opacity"
