@@ -42,24 +42,9 @@ const features = [
 ];
 
 const steps = [
-  {
-    number: "01",
-    icon: ClipboardList,
-    title: "Cadastre seu time",
-    description: "Preencha as informações do seu grupo esportivo e personalize seu espaço.",
-  },
-  {
-    number: "02",
-    icon: UserPlus,
-    title: "Convide os membros",
-    description: "Compartilhe o link e cada jogador cria sua conta em segundos.",
-  },
-  {
-    number: "03",
-    icon: Settings,
-    title: "Gerencie tudo em um só lugar",
-    description: "Presenças, pagamentos e comunicação — tudo centralizado.",
-  },
+  { number: "01", icon: ClipboardList, title: "Cadastre seu time" },
+  { number: "02", icon: UserPlus, title: "Convide os membros" },
+  { number: "03", icon: Settings, title: "Gerencie tudo" },
 ];
 
 const results = [
