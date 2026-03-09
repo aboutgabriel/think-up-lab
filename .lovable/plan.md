@@ -1,18 +1,29 @@
 
 
-## Reescrever FunnelIllustration com as cores teal/ciano originais
+## Restaurar cores originais do FunnelIllustration
 
-O código atual já contém valores teal (`hsl(180, 70%, ...)`) mas o preview pode estar mostrando uma versão diferente. Vou reescrever o arquivo completo para forçar a atualização e garantir que todas as cores correspondam exatamente à imagem de referência.
+As cores atuais (teal `hsl(180, 70%, ...)`) não correspondem ao original. As cores corretas são uma paleta azul marinho → ciano:
 
-### Ação
+| Cor | Hex | Uso |
+|-----|-----|-----|
+| Azul marinho | `#0A2A55` | Gradientes do fundo |
+| Azul médio | `#144C7D` | Linhas e elementos |
+| Azul tecnológico | `#1F7DB4` | Destaques |
+| Ciano neon | `#2ED1C2` | Brilho central e pontos |
+| Ciano claro | `#79E6DA` | Pontos e detalhes |
+| Branco | `#FFFFFF` | Caixas e textos |
+| Cinza claro | `#E9EEF2` | Fundo das caixas |
 
 **Arquivo:** `src/components/ui/FunnelIllustration.tsx`
 
-Reescrever o arquivo inteiro sem alterações de conteúdo — o objetivo é forçar um rebuild limpo. As cores já estão corretas no código:
-- Orbe: `hsl(180, 70%, 65%)` → `hsl(175, 40%, 15%)`
-- Halos e linhas: `hsl(180, 70%, 55%)`
-- Cards: bordas `hsl(180, 70%, 55%)`, ícones `hsl(180, 70%, 35%)`
-- Partículas: `hsl(180, 70%, 65-80%)`
-
-Se o problema persistir após o rebuild, pode ser cache do navegador — será necessário um hard refresh (Ctrl+Shift+R).
+Substituições principais:
+- **Orbe central**: gradiente de `#2ED1C2` → `#0A2A55`
+- **Halo**: `#2ED1C2` com opacidade
+- **Órbitas/círculos tracejados**: `#1F7DB4` e `#144C7D`
+- **Partículas**: mix de `#79E6DA`, `#2ED1C2`, `#1F7DB4`
+- **Linhas de fluxo (gradientes)**: de transparente → `#2ED1C2` ou `#1F7DB4`
+- **Cards**: fundo `#FFFFFF` ou `#E9EEF2`, borda `#1F7DB4`, ícones `#144C7D`
+- **Textos dos cards**: manter `#0A2A55` (título) e cinza (subtítulo)
+- **Connector dots**: `#2ED1C2` e `#79E6DA`
+- **Card shadow**: `#144C7D`
 
