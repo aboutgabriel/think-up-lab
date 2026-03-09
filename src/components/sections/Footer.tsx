@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import footerLogo from "@/assets/footer-logo.png";
 
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
   { href: "#projetos", label: "Projetos" },
   { href: "#como-funciona", label: "Como Funciona" },
-  
+  { href: "/baba-do-bacana", label: "Sistema de Gestão", isRoute: true },
   { href: "#contato", label: "Contato" },
 ];
 
