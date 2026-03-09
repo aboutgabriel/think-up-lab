@@ -81,7 +81,7 @@ export default function BabaDoBacana() {
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <span className="inline-block px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-sm font-medium text-primary-light mb-6">
-              ⚽ Para times e babas
+              Para times e babas
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
               Seu time merece mais{" "}
