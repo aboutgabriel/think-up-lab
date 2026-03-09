@@ -1,4 +1,4 @@
-import devicesMockup from "@/assets/devices-mockup.jpg";
+import devicesMockup from "@/assets/devices-mockup.png";
 
 const DevicesMockup = () => {
   return (
