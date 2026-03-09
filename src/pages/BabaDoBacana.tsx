@@ -260,27 +260,35 @@ export default function BabaDoBacana() {
               </h2>
             </div>
 
-            {/* Info cards compactos */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-              <div className="bg-card rounded-xl border border-border p-4 text-center">
-                <XCircle className="w-5 h-5 text-destructive mx-auto mb-2" />
-                <p className="text-xs font-medium text-foreground">Problema</p>
-                <p className="text-xs text-muted-foreground mt-1">Gestão pelo WhatsApp</p>
+            {/* Info cards com descrições detalhadas */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+              <div className="bg-card rounded-xl border border-border p-5 text-left">
+                <div className="flex items-center gap-2 mb-2">
+                  <XCircle className="w-5 h-5 text-destructive" />
+                  <p className="text-sm font-semibold text-foreground">Problema</p>
+                </div>
+                <p className="text-sm text-muted-foreground">O organizador perdia horas no WhatsApp confirmando presença e cobrando mensalidades. Informações se perdiam entre memes e áudios.</p>
               </div>
-              <div className="bg-card rounded-xl border border-border p-4 text-center">
-                <CheckCircle className="w-5 h-5 text-primary mx-auto mb-2" />
-                <p className="text-xs font-medium text-foreground">Solução</p>
-                <p className="text-xs text-muted-foreground mt-1">Web app de gestão</p>
+              <div className="bg-card rounded-xl border border-border p-5 text-left">
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  <p className="text-sm font-semibold text-foreground">Solução</p>
+                </div>
+                <p className="text-sm text-muted-foreground">Desenvolvemos um web app onde cada membro confirma presença e envia comprovante de pagamento direto no sistema.</p>
               </div>
-              <div className="bg-card rounded-xl border border-border p-4 text-center">
-                <ClipboardList className="w-5 h-5 text-primary mx-auto mb-2" />
-                <p className="text-xs font-medium text-foreground">Features</p>
-                <p className="text-xs text-muted-foreground mt-1">Presença e pagamentos</p>
+              <div className="bg-card rounded-xl border border-border p-5 text-left">
+                <div className="flex items-center gap-2 mb-2">
+                  <ClipboardList className="w-5 h-5 text-primary" />
+                  <p className="text-sm font-semibold text-foreground">Funcionalidades</p>
+                </div>
+                <p className="text-sm text-muted-foreground">Lista de presença automática, controle de inadimplência, painel da diretoria e histórico completo de partidas.</p>
               </div>
-              <div className="bg-card rounded-xl border border-border p-4 text-center">
-                <TrendingUp className="w-5 h-5 text-primary mx-auto mb-2" />
-                <p className="text-xs font-medium text-foreground">Impacto</p>
-                <p className="text-xs text-muted-foreground mt-1">80% menos mensagens</p>
+              <div className="bg-card rounded-xl border border-border p-5 text-left">
+                <div className="flex items-center gap-2 mb-2">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                  <p className="text-sm font-semibold text-foreground">Impacto</p>
+                </div>
+                <p className="text-sm text-muted-foreground">Redução de 80% nas mensagens do grupo e 5h/mês economizadas em retrabalho administrativo.</p>
               </div>
             </div>
 
