@@ -85,13 +85,8 @@ const Index = () => {
               </div>
 
               {/* Right: devices */}
-              <div className="flex justify-center items-start relative">
-                <div className="max-w-lg">
-                  <TabletMockup />
-                </div>
-                <div className="hidden md:block -ml-8 mt-12 relative z-10">
-                  <PhoneMockup />
-                </div>
+              <div className="flex justify-center items-center">
+                <DevicesMockup />
               </div>
             </div>
           </div>
