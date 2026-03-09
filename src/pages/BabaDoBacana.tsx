@@ -114,43 +114,41 @@ export default function BabaDoBacana() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {/* Antes */}
-            <div className="space-y-5">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 rounded-full bg-destructive/15 flex items-center justify-center">
-                  <XCircle className="w-5 h-5 text-destructive" />
+            <div className="bg-card rounded-xl border border-border p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <div className="w-8 h-8 rounded-full bg-destructive/15 flex items-center justify-center">
+                  <XCircle className="w-4 h-4 text-destructive" />
                 </div>
-                <h3 className="text-lg font-bold text-destructive">Antes</h3>
+                <h3 className="font-bold text-destructive">Antes</h3>
               </div>
-              {problems.map((item) => (
-                <div key={item.title} className="flex items-start gap-3">
-                  <item.icon className="w-5 h-5 text-destructive/70 mt-0.5 flex-shrink-0" />
-                  <div>
+              <div className="space-y-3">
+                {problems.map((item) => (
+                  <div key={item.title} className="flex items-center gap-2">
+                    <item.icon className="w-4 h-4 text-destructive/70 flex-shrink-0" />
                     <p className="font-medium text-foreground text-sm">{item.title}</p>
-                    <p className="text-muted-foreground text-sm">{item.description}</p>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             {/* Depois */}
-            <div className="space-y-5">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-primary" />
+            <div className="bg-card rounded-xl border border-primary/30 p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <div className="w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center">
+                  <CheckCircle className="w-4 h-4 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold text-primary">Depois</h3>
+                <h3 className="font-bold text-primary">Depois</h3>
               </div>
-              {features.slice(0, 4).map((item) => (
-                <div key={item.title} className="flex items-start gap-3">
-                  <item.icon className="w-5 h-5 text-primary/70 mt-0.5 flex-shrink-0" />
-                  <div>
+              <div className="space-y-3">
+                {features.slice(0, 4).map((item) => (
+                  <div key={item.title} className="flex items-center gap-2">
+                    <item.icon className="w-4 h-4 text-primary/70 flex-shrink-0" />
                     <p className="font-medium text-foreground text-sm">{item.title}</p>
-                    <p className="text-muted-foreground text-sm">{item.description}</p>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
