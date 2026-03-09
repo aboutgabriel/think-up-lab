@@ -154,34 +154,6 @@ export default function BabaDoBacana() {
         </div>
       </section>
 
-      {/* Solução — Features em grid sem carrossel */}
-      <section className="py-20 md:py-28 bg-secondary/40">
-        <div className="container">
-          <div className="max-w-2xl mx-auto text-center mb-14">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              A solução completa para seu time
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Tudo que você precisa para organizar seu grupo esportivo em um só sistema.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
-            {features.map((feat) => (
-              <div
-                key={feat.title}
-                className="bg-card rounded-xl border border-border p-4 flex flex-col items-center text-center gap-3 shadow-card"
-              >
-                <div className="w-12 h-12 rounded-xl border border-primary/30 bg-accent flex items-center justify-center">
-                  <feat.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-foreground text-xs">{feat.title}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Como Funciona — Timeline */}
       <section className="py-20 md:py-28">
         <div className="container">
