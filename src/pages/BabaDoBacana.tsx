@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
-import ProjectImageCarousel from "@/components/ui/ProjectImageCarousel";
+
 
 import baba1 from "@/assets/baba-bacana-1.jpeg";
 import baba2 from "@/assets/baba-bacana-2.jpeg";
