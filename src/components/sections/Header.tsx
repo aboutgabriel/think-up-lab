@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import headerLogo from "@/assets/grpm-logo.png";
 
@@ -14,8 +14,14 @@ const navLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToSection = (href: string) => {
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+      return;
+    }
     const element = document.querySelector(href);
     if (element) element.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
@@ -24,13 +30,13 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img
             src={headerLogo}
             alt="ThinkUp"
             className="h-10 md:h-14 w-auto object-contain transition-transform duration-200 hover:scale-[1.02]"
           />
-        </a>
+        </Link>
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) =>
