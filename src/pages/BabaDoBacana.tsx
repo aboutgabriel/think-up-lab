@@ -166,17 +166,16 @@ export default function BabaDoBacana() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
             {features.map((feat) => (
               <div
                 key={feat.title}
-                className="bg-card rounded-xl border border-border p-6 flex flex-col gap-3 shadow-card"
+                className="bg-card rounded-xl border border-border p-4 flex flex-col items-center text-center gap-3 shadow-card"
               >
-                <div className="w-10 h-10 rounded-lg border border-primary/30 bg-accent flex items-center justify-center flex-shrink-0">
-                  <feat.icon className="w-5 h-5 text-primary" />
+                <div className="w-12 h-12 rounded-xl border border-primary/30 bg-accent flex items-center justify-center">
+                  <feat.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground text-sm">{feat.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{feat.description}</p>
+                <h3 className="font-semibold text-foreground text-xs">{feat.title}</h3>
               </div>
             ))}
           </div>
