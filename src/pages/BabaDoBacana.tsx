@@ -25,6 +25,7 @@ import Footer from "@/components/sections/Footer";
 import baba1 from "@/assets/baba-bacana-1.jpeg";
 import baba2 from "@/assets/baba-bacana-2.jpeg";
 import baba3 from "@/assets/baba-bacana-3.jpeg";
+import baba4 from "@/assets/baba-bacana-4.jpeg";
 
 const problems = [
   { icon: XCircle, title: "Presença pelo WhatsApp" },
