@@ -1,37 +1,30 @@
 
-## Reestruturação da Seção "O Case" — 4 Setores com Imagem
+## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-Vou transformar os 4 cards em 4 setores independentes, cada um com:
-- Título + ícone
-- Explicação em tópicos (bullet points)
-- Uma imagem/print do projeto ao lado
+Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
 
-### Estrutura Nova
+### Alteracoes
 
-Cada setor terá layout alternado (imagem à esquerda/direita) para criar ritmo visual:
+**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
 
-1. **Problema** — Imagem à esquerda, tópicos à direita
-2. **Solução** — Imagem à direita, tópicos à esquerda  
-3. **Funcionalidades** — Imagem à esquerda, tópicos à direita
-4. **Impacto** — Imagem à direita, tópicos à esquerda
+Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
+- Frame do iPhone com notch/Dynamic Island
+- Tela com header "Dashboard" e hamburger menu
+- 2 KPI cards empilhados (Receita e Pedidos)
+- Mini grafico de barras verticais
+- Mini lista de categorias
+- Mesma paleta de cores do tablet (teal, navy, laranja)
 
-### Observação sobre Imagens
+**2. Arquivo: `src/pages/Index.tsx`**
 
-Atualmente existem 3 imagens (`baba1`, `baba2`, `baba3`). Para 4 setores, será necessário:
-- Reutilizar uma das imagens existentes, ou
-- Adicionar uma 4ª imagem ao projeto
+Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
+- Importar `PhoneMockup`
+- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
+- No mobile, empilhar verticalmente ou mostrar so o tablet
 
-### Alterações em `src/pages/BabaDoBacana.tsx`
+### Detalhes tecnicos
 
-**Linhas 263-314**: Substituir o grid de 4 cards + carrossel por:
-- 4 blocos `flex` alternados com `md:flex-row` e `md:flex-row-reverse`
-- Cada bloco contém:
-  - Div com imagem do app (aspect-ratio 9/16, rounded, shadow)
-  - Div com título, ícone e lista `<ul>` de tópicos
-- Botão "Ver projeto" mantido no final
-- Remover o componente `ProjectImageCarousel` (imagens agora estão inline)
-
-### Layout Responsivo
-
-- **Mobile**: Imagem em cima, texto embaixo (stack vertical)
-- **Desktop**: Lado a lado com alternância de posição
+- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
+- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
+- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
+- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
