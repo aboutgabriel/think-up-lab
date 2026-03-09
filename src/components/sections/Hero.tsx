@@ -23,7 +23,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="text-left order-2 md:order-1">
             <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 opacity-0 animate-fade-in"
+              className="font-sanseriffic text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
               <span className="text-white">Soluções digitais </span>
