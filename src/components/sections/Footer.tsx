@@ -39,15 +39,25 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Navegação</h4>
             <nav className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-left text-white/60 hover:text-white transition-colors text-sm"
-                >
-                  {link.label}
-                </button>
-              ))}
+              {navLinks.map((link) =>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="text-left text-white/60 hover:text-white transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={link.href}
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-left text-white/60 hover:text-white transition-colors text-sm"
+                  >
+                    {link.label}
+                  </button>
+                )
+              )}
             </nav>
           </div>
 
