@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import headerLogo from "@/assets/grpm-logo.png";
 
@@ -7,6 +8,7 @@ const navLinks = [
   { href: "#solucoes", label: "Soluções" },
   { href: "#projetos", label: "Projetos" },
   { href: "#como-funciona", label: "Como Funciona" },
+  { href: "/baba-do-bacana", label: "Sistema de Gestão", isRoute: true },
   { href: "#contato", label: "Contato" },
 ];
 
