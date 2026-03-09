@@ -27,75 +27,24 @@ import baba2 from "@/assets/baba-bacana-2.jpeg";
 import baba3 from "@/assets/baba-bacana-3.jpeg";
 
 const problems = [
-  {
-    icon: XCircle,
-    title: "Presença pelo WhatsApp",
-    description: "Lista de confirmados se perde entre memes, áudios e discussões infinitas.",
-  },
-  {
-    icon: CreditCard,
-    title: "Cobranças manuais",
-    description: "Cobrar mensalidade um por um, sem controle de quem já pagou.",
-  },
-  {
-    icon: MessageSquare,
-    title: "Confusão com pagamentos",
-    description: "Comprovantes misturados no chat, impossível rastrear depois.",
-  },
-  {
-    icon: Clock,
-    title: "Sem histórico",
-    description: "Nenhum registro de presenças, pagamentos ou membros ao longo do tempo.",
-  },
+  { icon: XCircle, title: "Presença pelo WhatsApp" },
+  { icon: CreditCard, title: "Cobranças manuais" },
+  { icon: MessageSquare, title: "Pagamentos confusos" },
+  { icon: Clock, title: "Sem histórico" },
 ];
 
 const features = [
-  {
-    icon: CheckCircle,
-    title: "Confirmação de presença",
-    description: "Cada jogador confirma ou recusa direto no sistema, sem poluir o grupo.",
-  },
-  {
-    icon: CreditCard,
-    title: "Comprovante de pagamento",
-    description: "Envio e validação de comprovantes de forma organizada e rastreável.",
-  },
-  {
-    icon: Shield,
-    title: "Controle de inadimplência",
-    description: "Veja quem está em dia e quem está devendo — tudo em tempo real.",
-  },
-  {
-    icon: Users,
-    title: "Registro de membros",
-    description: "Cadastro completo com dados de cada jogador do time.",
-  },
-  {
-    icon: LayoutDashboard,
-    title: "Painel da diretoria",
-    description: "Visão geral de tudo: presenças, pagamentos, membros e mais.",
-  },
+  { icon: CheckCircle, title: "Confirmação de presença" },
+  { icon: CreditCard, title: "Comprovante de pagamento" },
+  { icon: Shield, title: "Controle de inadimplência" },
+  { icon: Users, title: "Registro de membros" },
+  { icon: LayoutDashboard, title: "Painel da diretoria" },
 ];
 
 const steps = [
-  {
-    number: "01",
-    icon: ClipboardList,
-    title: "Cadastre seu time",
-    description: "Preencha as informações do seu grupo esportivo e personalize seu espaço.",
-  },
-  {
-    number: "02",
-    icon: UserPlus,
-    title: "Convide os membros",
-    description: "Compartilhe o link e cada jogador cria sua conta em segundos.",
-  },
-  {
-    number: "03",
-    icon: Settings,
-    title: "Gerencie tudo em um só lugar",
-    description: "Presenças, pagamentos e comunicação — tudo centralizado.",
-  },
+  { number: "01", icon: ClipboardList, title: "Cadastre seu time" },
+  { number: "02", icon: UserPlus, title: "Convide os membros" },
+  { number: "03", icon: Settings, title: "Gerencie tudo" },
 ];
 
 const results = [
@@ -165,43 +114,41 @@ export default function BabaDoBacana() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {/* Antes */}
-            <div className="space-y-5">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 rounded-full bg-destructive/15 flex items-center justify-center">
-                  <XCircle className="w-5 h-5 text-destructive" />
+            <div className="bg-card rounded-xl border border-border p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <div className="w-8 h-8 rounded-full bg-destructive/15 flex items-center justify-center">
+                  <XCircle className="w-4 h-4 text-destructive" />
                 </div>
-                <h3 className="text-lg font-bold text-destructive">Antes</h3>
+                <h3 className="font-bold text-destructive">Antes</h3>
               </div>
-              {problems.map((item) => (
-                <div key={item.title} className="flex items-start gap-3">
-                  <item.icon className="w-5 h-5 text-destructive/70 mt-0.5 flex-shrink-0" />
-                  <div>
+              <div className="space-y-3">
+                {problems.map((item) => (
+                  <div key={item.title} className="flex items-center gap-2">
+                    <item.icon className="w-4 h-4 text-destructive/70 flex-shrink-0" />
                     <p className="font-medium text-foreground text-sm">{item.title}</p>
-                    <p className="text-muted-foreground text-sm">{item.description}</p>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             {/* Depois */}
-            <div className="space-y-5">
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-primary" />
+            <div className="bg-card rounded-xl border border-primary/30 p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <div className="w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center">
+                  <CheckCircle className="w-4 h-4 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold text-primary">Depois</h3>
+                <h3 className="font-bold text-primary">Depois</h3>
               </div>
-              {features.slice(0, 4).map((item) => (
-                <div key={item.title} className="flex items-start gap-3">
-                  <item.icon className="w-5 h-5 text-primary/70 mt-0.5 flex-shrink-0" />
-                  <div>
+              <div className="space-y-3">
+                {features.slice(0, 4).map((item) => (
+                  <div key={item.title} className="flex items-center gap-2">
+                    <item.icon className="w-4 h-4 text-primary/70 flex-shrink-0" />
                     <p className="font-medium text-foreground text-sm">{item.title}</p>
-                    <p className="text-muted-foreground text-sm">{item.description}</p>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -219,17 +166,16 @@ export default function BabaDoBacana() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
             {features.map((feat) => (
               <div
                 key={feat.title}
-                className="bg-card rounded-xl border border-border p-6 flex flex-col gap-3 shadow-card"
+                className="bg-card rounded-xl border border-border p-4 flex flex-col items-center text-center gap-3 shadow-card"
               >
-                <div className="w-10 h-10 rounded-lg border border-primary/30 bg-accent flex items-center justify-center flex-shrink-0">
-                  <feat.icon className="w-5 h-5 text-primary" />
+                <div className="w-12 h-12 rounded-xl border border-primary/30 bg-accent flex items-center justify-center">
+                  <feat.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground text-sm">{feat.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{feat.description}</p>
+                <h3 className="font-semibold text-foreground text-xs">{feat.title}</h3>
               </div>
             ))}
           </div>
@@ -255,12 +201,11 @@ export default function BabaDoBacana() {
 
               {steps.map((step) => (
                 <div key={step.number} className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center text-primary-foreground font-bold text-lg shadow-primary mb-4 relative z-10">
+                  <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center text-primary-foreground font-bold text-base shadow-primary mb-3 relative z-10">
                     {step.number}
                   </div>
-                  <step.icon className="w-6 h-6 text-primary mb-3" />
-                  <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed max-w-[240px]">{step.description}</p>
+                  <step.icon className="w-5 h-5 text-primary mb-2" />
+                  <h3 className="text-sm font-semibold text-foreground">{step.title}</h3>
                 </div>
               ))}
             </div>
@@ -302,103 +247,62 @@ export default function BabaDoBacana() {
         </div>
       </section>
 
-      {/* O Case — Carrossel + Detalhes lado a lado */}
+      {/* O Case — Carrossel grande embaixo */}
       <section className="py-20 md:py-28">
         <div className="container">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">
               <Badge variant="outline" className="mb-4 text-primary border-primary/30">
-                📋 Case completo
+                📋 Case
               </Badge>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-                O Case: Baba do Bacana
+                Baba do Bacana
               </h2>
             </div>
 
-            <div className="bg-card rounded-2xl border border-border shadow-card overflow-hidden">
-              {/* Layout principal: carrossel + detalhes */}
-              <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr]">
-                {/* Carrossel */}
-                <div className="flex items-center justify-center p-8 lg:border-r border-border bg-secondary/20">
-                  <div className="w-full max-w-[180px]">
-                    <ProjectImageCarousel
-                      images={[baba1, baba2, baba3]}
-                      alt="Baba do Bacana — telas do app"
-                    />
-                  </div>
-                </div>
-
-                {/* Detalhes */}
-                <div className="flex flex-col divide-y divide-border">
-                  {/* Problema & Solução */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
-                    <div className="p-6 md:p-8">
-                      <div className="flex items-center gap-2 mb-3">
-                        <XCircle className="w-5 h-5 text-destructive" />
-                        <h3 className="font-bold text-foreground">O Problema</h3>
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        Dificuldade em controlar presença e pagamento de um grupo que joga futebol semanalmente.
-                      </p>
-                    </div>
-                    <div className="p-6 md:p-8">
-                      <div className="flex items-center gap-2 mb-3">
-                        <CheckCircle className="w-5 h-5 text-primary" />
-                        <h3 className="font-bold text-foreground">A Solução</h3>
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        Web app onde membros confirmam presença nos próximos jogos e enviam comprovantes de pagamento.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Funcionalidades & Impacto */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
-                    <div className="p-6 md:p-8">
-                      <div className="flex items-center gap-2 mb-4">
-                        <ClipboardList className="w-5 h-5 text-primary" />
-                        <h3 className="font-bold text-foreground">Funcionalidades</h3>
-                      </div>
-                      <ul className="space-y-2">
-                        {["Confirmação de presença", "Envio de comprovante de pagamento", "Registro de membros", "Controle de inadimplência"].map((feat) => (
-                          <li key={feat} className="flex items-center gap-2 text-muted-foreground text-sm">
-                            <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                            {feat}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="p-6 md:p-8">
-                      <div className="flex items-center gap-2 mb-4">
-                        <TrendingUp className="w-5 h-5 text-primary" />
-                        <h3 className="font-bold text-foreground">Impacto Gerado</h3>
-                      </div>
-                      <ul className="space-y-2">
-                        {["Menos mensagens no WhatsApp", "Menos retrabalho manual", "Mais organização e previsibilidade"].map((impact) => (
-                          <li key={impact} className="flex items-center gap-2 text-muted-foreground text-sm">
-                            <TrendingUp className="w-4 h-4 text-primary flex-shrink-0" />
-                            {impact}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+            {/* Info cards compactos */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+              <div className="bg-card rounded-xl border border-border p-4 text-center">
+                <XCircle className="w-5 h-5 text-destructive mx-auto mb-2" />
+                <p className="text-xs font-medium text-foreground">Problema</p>
+                <p className="text-xs text-muted-foreground mt-1">Gestão pelo WhatsApp</p>
               </div>
-
-              {/* CTA */}
-              <div className="border-t border-border p-6 text-center bg-secondary/30">
-                <Button
-                  variant="outline"
-                  className="rounded-full px-8 py-5 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                  asChild
-                >
-                  <a href="https://babadobacana.lovable.app/" target="_blank" rel="noopener noreferrer">
-                    Ver projeto
-                    <ExternalLink className="ml-2 w-4 h-4" />
-                  </a>
-                </Button>
+              <div className="bg-card rounded-xl border border-border p-4 text-center">
+                <CheckCircle className="w-5 h-5 text-primary mx-auto mb-2" />
+                <p className="text-xs font-medium text-foreground">Solução</p>
+                <p className="text-xs text-muted-foreground mt-1">Web app de gestão</p>
               </div>
+              <div className="bg-card rounded-xl border border-border p-4 text-center">
+                <ClipboardList className="w-5 h-5 text-primary mx-auto mb-2" />
+                <p className="text-xs font-medium text-foreground">Features</p>
+                <p className="text-xs text-muted-foreground mt-1">Presença e pagamentos</p>
+              </div>
+              <div className="bg-card rounded-xl border border-border p-4 text-center">
+                <TrendingUp className="w-5 h-5 text-primary mx-auto mb-2" />
+                <p className="text-xs font-medium text-foreground">Impacto</p>
+                <p className="text-xs text-muted-foreground mt-1">80% menos mensagens</p>
+              </div>
+            </div>
+
+            {/* Carrossel grande e centralizado */}
+            <div className="flex flex-col items-center">
+              <div className="w-full max-w-[280px] md:max-w-[320px]">
+                <ProjectImageCarousel
+                  images={[baba1, baba2, baba3]}
+                  alt="Baba do Bacana — telas do app"
+                />
+              </div>
+              
+              <Button
+                variant="outline"
+                className="mt-8 rounded-full px-8 py-5 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                asChild
+              >
+                <a href="https://babadobacana.lovable.app/" target="_blank" rel="noopener noreferrer">
+                  Ver projeto
+                  <ExternalLink className="ml-2 w-4 h-4" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
