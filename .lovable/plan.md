@@ -1,30 +1,40 @@
 
-## Adicionar iPhone ao lado do iPad na secao de Dashboard
+## Recomendações de fontes para ThinkUp Lab
 
-Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
+Baseado na análise do projeto, aqui estão as alternativas de fontes que se alinhm melhor com a identidade visual corporativa tech da ThinkUp Lab:
 
-### Alteracoes
+**Contexto atual**:
+- Corpo do texto: Inter (via Google Fonts)
+- Títulos: Sanseriffic (custom OTF)
+- Paleta: Navy/Teal/Azul (224° 100%)
+- Estilo: Moderno, clean, tech-forward
 
-**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
+**Opções recomendadas** (em ordem de compatibilidade):
 
-Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
-- Frame do iPhone com notch/Dynamic Island
-- Tela com header "Dashboard" e hamburger menu
-- 2 KPI cards empilhados (Receita e Pedidos)
-- Mini grafico de barras verticais
-- Mini lista de categorias
-- Mesma paleta de cores do tablet (teal, navy, laranja)
+1. **Sora** (Google Fonts)
+   - Geométrica, moderna, excelente legibilidade
+   - Ótima para títulos tech/SaaS
+   - Peso: 400-700
+   
+2. **Plus Jakarta Sans** (Google Fonts)
+   - Contemporânea, friendly, profissional
+   - Popular em startups tech
+   - Ótima hierarquia visual
+   
+3. **Poppins** (Google Fonts)
+   - Geométrica, bold, futurista
+   - Muito popular em design moderno
+   - Excelente para branding
+   
+4. **Public Sans** (Google Fonts)
+   - Clean, neutral, corporativa
+   - Desenhada para setor público/gov
+   - Extremamente legível
 
-**2. Arquivo: `src/pages/Index.tsx`**
+5. **Outfit** (Google Fonts)
+   - Tech-forward, geométrica, moderna
+   - Equilibrada entre friendly e profissional
 
-Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
-- Importar `PhoneMockup`
-- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
-- No mobile, empilhar verticalmente ou mostrar so o tablet
+**Minha recomendação principal**: **Sora** ou **Plus Jakarta Sans** — ambas transmitem modernidade, confiabilidade e inovação, combinando perfeitamente com a paleta azul navegador e o posicionamento de "soluções digitais sob medida".
 
-### Detalhes tecnicos
-
-- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
-- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
-- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
-- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
+Qual dessas opções você prefere para começar a testar?
