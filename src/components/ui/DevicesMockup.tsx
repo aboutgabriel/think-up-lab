@@ -6,7 +6,7 @@ const DevicesMockup = () => {
       <img
         src={devicesMockup}
         alt="Dispositivos mostrando dashboards"
-        className="w-full h-auto block shadow-2xl rounded-lg"
+        className="w-full h-auto block"
         loading="lazy"
       />
     </div>
