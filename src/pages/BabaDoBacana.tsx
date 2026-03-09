@@ -25,6 +25,7 @@ import Footer from "@/components/sections/Footer";
 import baba1 from "@/assets/baba-bacana-1.jpeg";
 import baba2 from "@/assets/baba-bacana-2.jpeg";
 import baba3 from "@/assets/baba-bacana-3.jpeg";
+import baba4 from "@/assets/baba-bacana-4.jpeg";
 
 const problems = [
   { icon: XCircle, title: "Presença pelo WhatsApp" },
@@ -236,7 +237,7 @@ export default function BabaDoBacana() {
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center mb-16">
               <div className="w-full max-w-[240px] md:max-w-[260px] flex-shrink-0">
                 <div className="aspect-[9/16] rounded-xl overflow-hidden shadow-card border border-border">
-                  <img src={baba1} alt="Baba do Bacana — tela do problema" className="w-full h-full object-cover" />
+                  <img src={baba4} alt="Baba do Bacana — tela do problema" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="flex-1">

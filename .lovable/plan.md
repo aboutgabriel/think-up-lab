@@ -1,25 +1,30 @@
 
+## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-## Trocar imagens do case na página Sistema de Gestão
+Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
 
-### O que será feito
-Substituir as 3 imagens atuais (`baba-bacana-1.jpeg`, `baba-bacana-2.jpeg`, `baba-bacana-3.jpeg`) pelas 4 novas fotos enviadas, e adicionar uma 4ª imagem ao case (atualmente o setor "Impacto" reutiliza `baba1`).
+### Alteracoes
 
-### Alterações
+**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
 
-1. **Copiar as 4 imagens** para `src/assets/`:
-   - `FOTO_1.jpeg` → `src/assets/baba-bacana-1.jpeg` (Meu Perfil — setor Problema ou outro)
-   - `FOTO_2.jpeg` → `src/assets/baba-bacana-2.jpeg` (Tela Início — Próximo Baba)
-   - `FOTO_3.jpeg` → `src/assets/baba-bacana-3.jpeg` (Meus Pagamentos)
-   - `FOTO_4.jpeg` → `src/assets/baba-bacana-4.jpeg` (Tela de Login/PIN)
+Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
+- Frame do iPhone com notch/Dynamic Island
+- Tela com header "Dashboard" e hamburger menu
+- 2 KPI cards empilhados (Receita e Pedidos)
+- Mini grafico de barras verticais
+- Mini lista de categorias
+- Mesma paleta de cores do tablet (teal, navy, laranja)
 
-2. **`src/pages/BabaDoBacana.tsx`**:
-   - Adicionar import da 4ª imagem: `import baba4 from "@/assets/baba-bacana-4.jpeg"`
-   - Atualizar os 4 setores do case para usar as imagens corretas:
-     - Setor 1 (Problema): `baba4` (tela de login)
-     - Setor 2 (Solução): `baba2` (tela início)
-     - Setor 3 (Funcionalidades): `baba3` (tela pagamentos)
-     - Setor 4 (Impacto): `baba1` (tela perfil)
+**2. Arquivo: `src/pages/Index.tsx`**
 
-As imagens sobrescrevem os arquivos existentes, então os imports permanecem os mesmos para as 3 primeiras. Apenas a 4ª é nova.
+Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
+- Importar `PhoneMockup`
+- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
+- No mobile, empilhar verticalmente ou mostrar so o tablet
 
+### Detalhes tecnicos
+
+- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
+- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
+- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
+- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
