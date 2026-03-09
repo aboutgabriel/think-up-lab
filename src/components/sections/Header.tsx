@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import headerLogo from "@/assets/grpm-logo.png";
 
 const navLinks = [
-  { href: "#solucoes", label: "Soluções" },
-  { href: "#projetos", label: "Projetos" },
-  { href: "/baba-do-bacana", label: "Sistema de Gestão", isRoute: true },
+  { href: "#solucoes", label: "Nossas Soluções" },
   { href: "#como-funciona", label: "Como Funciona" },
+  { href: "/baba-do-bacana", label: "Sistema de Gestão", isRoute: true },
+  { href: "#projetos", label: "Projetos" },
   { href: "#contato", label: "Contato" },
 ];
 
