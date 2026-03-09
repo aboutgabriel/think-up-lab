@@ -7,8 +7,7 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
-import TabletMockup from "@/components/ui/TabletMockup";
-import PhoneMockup from "@/components/ui/PhoneMockup";
+import DevicesMockup from "@/components/ui/DevicesMockup";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
