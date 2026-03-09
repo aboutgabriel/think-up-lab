@@ -1,30 +1,39 @@
 
-## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
+## Substituir mockups SVG por dispositivos realistas com imagens geradas por IA
 
-### Alteracoes
+### Abordagem
 
-**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
+1. **Criar edge function `generate-device-screenshots`** que usa Lovable AI (modelo `google/gemini-2.5-flash-image`) para gerar duas imagens de dashboard:
+   - Uma versão tablet (landscape, estilo painel administrativo)
+   - Uma versão mobile (portrait, dashboard simplificado)
 
-Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
-- Frame do iPhone com notch/Dynamic Island
-- Tela com header "Dashboard" e hamburger menu
-- 2 KPI cards empilhados (Receita e Pedidos)
-- Mini grafico de barras verticais
-- Mini lista de categorias
-- Mesma paleta de cores do tablet (teal, navy, laranja)
+2. **Salvar as imagens no Storage** (bucket público `device-screenshots`) para uso como assets estáticos.
 
-**2. Arquivo: `src/pages/Index.tsx`**
+3. **Substituir `TabletMockup.tsx` e `PhoneMockup.tsx`** por componentes com frames CSS realistas de iPad e iPhone, usando as imagens geradas como conteúdo da tela.
 
-Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
-- Importar `PhoneMockup`
-- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
-- No mobile, empilhar verticalmente ou mostrar so o tablet
+4. **Criar página/botão admin temporário** para disparar a geração das imagens (ou gerar automaticamente na primeira visita se não existirem).
 
-### Detalhes tecnicos
+### Alterações
 
-- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
-- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
-- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
-- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
+**Novo: `supabase/functions/generate-device-screenshots/index.ts`**
+- Chama Lovable AI com prompts descrevendo dashboards de negócios
+- Faz upload das imagens base64 para o bucket `device-screenshots`
+- Retorna as URLs públicas
+
+**Migração SQL**: Criar bucket de storage `device-screenshots` (público)
+
+**`src/components/ui/TabletMockup.tsx`**: Substituir SVG por div com frame CSS de iPad + `<img>` da screenshot do storage
+
+**`src/components/ui/PhoneMockup.tsx`**: Substituir SVG por div com frame CSS de iPhone + `<img>` da screenshot do storage
+
+**`src/pages/Index.tsx`**: Adicionar lógica para verificar se imagens existem no storage e, se não, chamar a edge function para gerá-las
+
+### Detalhes técnicos
+
+- Modelo: `google/gemini-2.5-flash-image` com `modalities: ["image", "text"]`
+- Prompt tablet: "A professional business analytics dashboard with charts, KPIs, and data tables. Clean modern UI with blue color scheme. Screenshot style, no device frame."
+- Prompt mobile: "A mobile business dashboard app screen showing KPI cards and a bar chart. Clean modern UI with blue color scheme. Portrait orientation."
+- CSS frames usam `border-radius`, `box-shadow` e bordas escuras para simular dispositivos reais
+- Imagens são cacheadas no storage, geradas apenas uma vez
+
