@@ -10,7 +10,6 @@ export default function Hero() {
 
   return (
     <section
-      id="solucoes"
       className="relative min-h-screen flex items-center pt-24 md:pt-28 pb-20 md:pb-28 overflow-hidden bg-navy text-white"
     >
       <div className="absolute inset-0 -z-10">
