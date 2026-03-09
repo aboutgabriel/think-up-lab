@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import Services from "@/components/sections/Services";
@@ -11,6 +12,22 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
+  // Handle hash-based scroll on page load (for navigation from other pages)
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        }
+      }, 100);
+    }
+  }, []);
+
   const scrollToContact = () => {
     const element = document.querySelector("#contato");
     if (element) element.scrollIntoView({ behavior: "smooth" });
