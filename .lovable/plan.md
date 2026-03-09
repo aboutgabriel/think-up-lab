@@ -1,30 +1,30 @@
 
+## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-## Usar mockup realista de iPad + iPhone com dashboards sobrepostos
+Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
 
-A imagem enviada mostra um mockup em perspectiva isométrica de iPad e iPhone com telas brancas. A ideia é usar essa imagem como frame dos dispositivos e posicionar as screenshots de dashboard por cima das telas brancas usando CSS.
+### Alteracoes
 
-### Alterações
+**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
 
-**1. Copiar o mockup para o projeto**
-- Copiar `user-uploads://89368.jpg` para `src/assets/devices-mockup.jpg`
+Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
+- Frame do iPhone com notch/Dynamic Island
+- Tela com header "Dashboard" e hamburger menu
+- 2 KPI cards empilhados (Receita e Pedidos)
+- Mini grafico de barras verticais
+- Mini lista de categorias
+- Mesma paleta de cores do tablet (teal, navy, laranja)
 
-**2. Criar novo componente `src/components/ui/DevicesMockup.tsx`**
-- Substituir os dois componentes separados (TabletMockup + PhoneMockup) por um único componente
-- Usar a imagem do mockup como base (`position: relative`)
-- Posicionar as duas imagens de dashboard (`dashboard-tablet.png` e `dashboard-phone.png`) com `position: absolute` + CSS `transform` (perspective, rotateX, rotateY, skew) para alinhar com as telas do mockup
-- Os valores de posição e transform serão ajustados para encaixar nas telas brancas da imagem
+**2. Arquivo: `src/pages/Index.tsx`**
 
-**3. Atualizar `src/pages/Index.tsx`**
-- Remover imports de TabletMockup e PhoneMockup
-- Importar o novo DevicesMockup
-- Simplificar a área de dispositivos (linhas 88-95) para usar apenas o novo componente
+Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
+- Importar `PhoneMockup`
+- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
+- No mobile, empilhar verticalmente ou mostrar so o tablet
 
-### Detalhes técnicos
+### Detalhes tecnicos
 
-- O componente usará um container `relative` com a imagem do mockup
-- As screenshots de dashboard serão posicionadas com `absolute`, usando `top`, `left`, `width`, `height` em porcentagens para responsividade
-- CSS `transform` com `perspective()`, `rotateX()`, `rotateY()` para corresponder ao ângulo isométrico das telas no mockup
-- Mantém a animação `animate-float` existente
-- No mobile, o componente inteiro escala proporcionalmente
-
+- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
+- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
+- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
+- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena

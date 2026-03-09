@@ -7,8 +7,7 @@ import HowItWorks from "@/components/sections/HowItWorks";
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
-import TabletMockup from "@/components/ui/TabletMockup";
-import PhoneMockup from "@/components/ui/PhoneMockup";
+import DevicesMockup from "@/components/ui/DevicesMockup";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -86,13 +85,8 @@ const Index = () => {
               </div>
 
               {/* Right: devices */}
-              <div className="flex justify-center items-start relative">
-                <div className="max-w-lg">
-                  <TabletMockup />
-                </div>
-                <div className="hidden md:block -ml-8 mt-12 relative z-10">
-                  <PhoneMockup />
-                </div>
+              <div className="flex justify-center items-center">
+                <DevicesMockup />
               </div>
             </div>
           </div>
