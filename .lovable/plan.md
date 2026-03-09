@@ -1,30 +1,18 @@
 
-## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
+## Reescrever FunnelIllustration com as cores teal/ciano originais
 
-### Alteracoes
+O código atual já contém valores teal (`hsl(180, 70%, ...)`) mas o preview pode estar mostrando uma versão diferente. Vou reescrever o arquivo completo para forçar a atualização e garantir que todas as cores correspondam exatamente à imagem de referência.
 
-**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
+### Ação
 
-Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
-- Frame do iPhone com notch/Dynamic Island
-- Tela com header "Dashboard" e hamburger menu
-- 2 KPI cards empilhados (Receita e Pedidos)
-- Mini grafico de barras verticais
-- Mini lista de categorias
-- Mesma paleta de cores do tablet (teal, navy, laranja)
+**Arquivo:** `src/components/ui/FunnelIllustration.tsx`
 
-**2. Arquivo: `src/pages/Index.tsx`**
+Reescrever o arquivo inteiro sem alterações de conteúdo — o objetivo é forçar um rebuild limpo. As cores já estão corretas no código:
+- Orbe: `hsl(180, 70%, 65%)` → `hsl(175, 40%, 15%)`
+- Halos e linhas: `hsl(180, 70%, 55%)`
+- Cards: bordas `hsl(180, 70%, 55%)`, ícones `hsl(180, 70%, 35%)`
+- Partículas: `hsl(180, 70%, 65-80%)`
 
-Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
-- Importar `PhoneMockup`
-- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
-- No mobile, empilhar verticalmente ou mostrar so o tablet
+Se o problema persistir após o rebuild, pode ser cache do navegador — será necessário um hard refresh (Ctrl+Shift+R).
 
-### Detalhes tecnicos
-
-- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
-- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
-- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
-- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
