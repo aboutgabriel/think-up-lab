@@ -253,7 +253,7 @@ export default function BabaDoBacana() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">
               <Badge variant="outline" className="mb-4 text-primary border-primary/30">
-                📋 Case
+                Case
               </Badge>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                 Baba do Bacana
