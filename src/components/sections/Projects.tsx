@@ -2,13 +2,6 @@ import { ExternalLink, Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import ProjectImageCarousel from "@/components/ui/ProjectImageCarousel";
 import euIndico1 from "@/assets/eu-indico-1.jpeg";
 import euIndico2 from "@/assets/eu-indico-2.jpeg";
@@ -72,63 +65,48 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="max-w-sm mx-auto px-12">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {projects.map((project) => (
-                <CarouselItem key={project.name}>
-                  <Card className="overflow-hidden border-0 shadow-card">
-                    <CardContent className="p-0">
-                      {/* Project Screenshots Carousel */}
-                      <ProjectImageCarousel
-                        images={project.screenshots}
-                        alt={project.name}
-                        className="p-3"
-                      />
+        {/* Grid responsivo: 1 coluna mobile, 3 colunas desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {projects.map((project) => (
+            <Card key={project.name} className="overflow-hidden border-0 shadow-card">
+              <CardContent className="p-0">
+                <ProjectImageCarousel
+                  images={project.screenshots}
+                  alt={project.name}
+                  className="p-3"
+                />
 
-                      {/* Project Info */}
-                      <div className="p-6 md:p-8 pt-4">
-                        <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
-                          {project.name}
-                        </h3>
-                        <p className="text-muted-foreground mb-4">
-                          {project.description}
-                        </p>
+                <div className="p-6 pt-4">
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    {project.name}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    {project.description}
+                  </p>
 
-                        <ul className="space-y-2 mb-6">
-                          {project.features.map((feature) => (
-                            <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
+                  <ul className="space-y-2 mb-6">
+                    {project.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
 
-                        <Button
-                          variant="outline"
-                          className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
-                          asChild
-                        >
-                          <a href={project.link} target="_blank" rel="noopener noreferrer">
-                            Ver projeto
-                            <ExternalLink className="ml-2 w-4 h-4" />
-                          </a>
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" />
-            <CarouselNext className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" />
-          </Carousel>
+                  <Button
+                    variant="outline"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                    asChild
+                  >
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      Ver projeto
+                      <ExternalLink className="ml-2 w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         <div className="flex justify-center mt-10">

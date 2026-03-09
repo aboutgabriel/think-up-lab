@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import {
   CheckCircle,
   XCircle,
@@ -20,7 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
-
+import Contact from "@/components/sections/Contact";
 
 import baba1 from "@/assets/baba-bacana-1.jpeg";
 import baba2 from "@/assets/baba-bacana-2.jpeg";
@@ -43,9 +42,9 @@ const features = [
 ];
 
 const steps = [
-  { number: "01", icon: ClipboardList, title: "Cadastre seu time" },
-  { number: "02", icon: UserPlus, title: "Convide os membros" },
-  { number: "03", icon: Settings, title: "Gerencie tudo" },
+  { number: "01", icon: ClipboardList, title: "Cadastre seu time", description: "Crie o perfil do seu grupo com nome, regras e valores de contribuição." },
+  { number: "02", icon: UserPlus, title: "Convide os membros", description: "Compartilhe o link e cada membro se registra direto na plataforma." },
+  { number: "03", icon: Settings, title: "Gerencie tudo", description: "Presença, pagamentos e comunicação — tudo centralizado num só lugar." },
 ];
 
 const results = [
@@ -67,17 +66,16 @@ const results = [
 ];
 
 export default function BabaDoBacana() {
-  const navigate = useNavigate();
-
   const scrollToContact = () => {
-    navigate("/#contato");
+    const element = document.querySelector("#contato");
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero — texto centralizado sem imagem */}
+      {/* Hero */}
       <section className="bg-navy text-primary-foreground pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
@@ -116,7 +114,6 @@ export default function BabaDoBacana() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            {/* Antes */}
             <div className="bg-card rounded-xl border border-border p-6">
               <div className="flex items-center gap-2 mb-5">
                 <div className="w-8 h-8 rounded-full bg-destructive/15 flex items-center justify-center">
@@ -134,7 +131,6 @@ export default function BabaDoBacana() {
               </div>
             </div>
 
-            {/* Depois */}
             <div className="bg-card rounded-xl border border-primary/30 p-6">
               <div className="flex items-center gap-2 mb-5">
                 <div className="w-8 h-8 rounded-full bg-primary/15 flex items-center justify-center">
@@ -155,8 +151,8 @@ export default function BabaDoBacana() {
         </div>
       </section>
 
-      {/* Como Funciona — Timeline */}
-      <section className="py-20 md:py-28">
+      {/* Como Funciona — Timeline Vertical */}
+      <section className="py-20 md:py-28 bg-card">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center mb-14">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -167,20 +163,32 @@ export default function BabaDoBacana() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-              {/* Connecting line (desktop only) */}
-              <div className="hidden md:block absolute top-7 left-[16.67%] right-[16.67%] h-0.5 bg-primary/20" />
+          <div className="max-w-xl mx-auto">
+            <div className="relative">
+              {/* Vertical line */}
+              <div className="absolute left-6 top-6 bottom-6 w-0.5 bg-primary/20" />
 
-              {steps.map((step) => (
-                <div key={step.number} className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center text-primary-foreground font-bold text-base shadow-primary mb-3 relative z-10">
-                    {step.number}
+              <div className="space-y-12">
+                {steps.map((step, i) => (
+                  <div key={step.number} className="flex gap-6 relative">
+                    {/* Circle with number */}
+                    <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center text-primary-foreground font-bold text-sm shadow-primary flex-shrink-0 relative z-10">
+                      {step.number}
+                    </div>
+
+                    {/* Content */}
+                    <div className="pt-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <step.icon className="w-4 h-4 text-primary" />
+                        <h3 className="text-lg font-bold text-foreground">{step.title}</h3>
+                      </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                  <step.icon className="w-5 h-5 text-primary mb-2" />
-                  <h3 className="text-sm font-semibold text-foreground">{step.title}</h3>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -220,7 +228,7 @@ export default function BabaDoBacana() {
         </div>
       </section>
 
-      {/* O Case — Carrossel grande embaixo */}
+      {/* O Case */}
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="max-w-4xl mx-auto">
@@ -342,25 +350,8 @@ export default function BabaDoBacana() {
         </div>
       </section>
 
-      {/* CTA Final */}
-      <section className="py-20 md:py-28 bg-secondary/40">
-        <div className="container">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Quer esse sistema para o seu time?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              Entre em contato e vamos montar a solução ideal para o seu grupo esportivo.
-            </p>
-            <Button
-              onClick={scrollToContact}
-              className="rounded-full px-10 py-6 text-base gradient-primary text-primary-foreground shadow-primary hover:opacity-90 transition-opacity"
-            >
-              Fale Conosco
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Contato embutido */}
+      <Contact />
 
       <Footer />
     </div>

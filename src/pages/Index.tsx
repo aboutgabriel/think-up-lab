@@ -98,6 +98,7 @@ const Index = () => {
           </div>
         </section>
 
+        <About />
         <Projects />
         <Contact />
       </main>
