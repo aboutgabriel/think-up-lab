@@ -43,7 +43,7 @@ const Index = () => {
         <HowItWorks />
 
         {/* ── Seção: Seu negócio no controle ── */}
-        <section className="py-20 md:py-32 bg-card">
+        <section className="py-20 md:py-32 bg-[#dcdde2]">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               {/* Left: text */}
