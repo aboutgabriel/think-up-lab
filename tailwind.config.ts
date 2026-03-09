@@ -57,6 +57,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        heading: ["Sora", "system-ui", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
