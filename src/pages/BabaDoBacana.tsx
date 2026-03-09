@@ -260,50 +260,103 @@ export default function BabaDoBacana() {
               </h2>
             </div>
 
-            {/* Info cards com descrições detalhadas */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
-              <div className="bg-card rounded-xl border border-border p-5 text-left">
-                <div className="flex items-center gap-2 mb-2">
-                  <XCircle className="w-5 h-5 text-destructive" />
-                  <p className="text-sm font-semibold text-foreground">Problema</p>
+            {/* Setor 1 — Problema */}
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center mb-16">
+              <div className="w-full max-w-[240px] md:max-w-[260px] flex-shrink-0">
+                <div className="aspect-[9/16] rounded-xl overflow-hidden shadow-card border border-border">
+                  <img src={baba1} alt="Baba do Bacana — tela do problema" className="w-full h-full object-cover" />
                 </div>
-                <p className="text-sm text-muted-foreground">O organizador perdia horas no WhatsApp confirmando presença e cobrando mensalidades. Informações se perdiam entre memes e áudios.</p>
               </div>
-              <div className="bg-card rounded-xl border border-border p-5 text-left">
-                <div className="flex items-center gap-2 mb-2">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  <p className="text-sm font-semibold text-foreground">Solução</p>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-9 h-9 rounded-full bg-destructive/15 flex items-center justify-center">
+                    <XCircle className="w-5 h-5 text-destructive" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground">Problema</h3>
                 </div>
-                <p className="text-sm text-muted-foreground">Desenvolvemos um web app onde cada membro confirma presença e envia comprovante de pagamento direto no sistema.</p>
-              </div>
-              <div className="bg-card rounded-xl border border-border p-5 text-left">
-                <div className="flex items-center gap-2 mb-2">
-                  <ClipboardList className="w-5 h-5 text-primary" />
-                  <p className="text-sm font-semibold text-foreground">Funcionalidades</p>
-                </div>
-                <p className="text-sm text-muted-foreground">Lista de presença automática, controle de inadimplência, painel da diretoria e histórico completo de partidas.</p>
-              </div>
-              <div className="bg-card rounded-xl border border-border p-5 text-left">
-                <div className="flex items-center gap-2 mb-2">
-                  <TrendingUp className="w-5 h-5 text-primary" />
-                  <p className="text-sm font-semibold text-foreground">Impacto</p>
-                </div>
-                <p className="text-sm text-muted-foreground">Redução de 80% nas mensagens do grupo e 5h/mês economizadas em retrabalho administrativo.</p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2"><span className="text-destructive mt-0.5">•</span>Presença confirmada por mensagens no WhatsApp, sem controle real</li>
+                  <li className="flex items-start gap-2"><span className="text-destructive mt-0.5">•</span>Cobranças feitas manualmente, sem registro ou histórico</li>
+                  <li className="flex items-start gap-2"><span className="text-destructive mt-0.5">•</span>Informações perdidas entre memes e áudios do grupo</li>
+                  <li className="flex items-start gap-2"><span className="text-destructive mt-0.5">•</span>Organizador gastando horas toda semana em tarefas repetitivas</li>
+                </ul>
               </div>
             </div>
 
-            {/* Carrossel grande e centralizado */}
-            <div className="flex flex-col items-center">
-              <div className="w-full max-w-[280px] md:max-w-[320px]">
-                <ProjectImageCarousel
-                  images={[baba1, baba2, baba3]}
-                  alt="Baba do Bacana — telas do app"
-                />
+            {/* Setor 2 — Solução */}
+            <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-12 items-center mb-16">
+              <div className="w-full max-w-[240px] md:max-w-[260px] flex-shrink-0">
+                <div className="aspect-[9/16] rounded-xl overflow-hidden shadow-card border border-border">
+                  <img src={baba2} alt="Baba do Bacana — tela da solução" className="w-full h-full object-cover" />
+                </div>
               </div>
-              
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-9 h-9 rounded-full bg-primary/15 flex items-center justify-center">
+                    <CheckCircle className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground">Solução</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>Web app acessível pelo celular, sem precisar baixar nada</li>
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>Cada membro confirma presença direto no sistema</li>
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>Envio de comprovante de pagamento com um clique</li>
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>Tudo centralizado e organizado automaticamente</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Setor 3 — Funcionalidades */}
+            <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center mb-16">
+              <div className="w-full max-w-[240px] md:max-w-[260px] flex-shrink-0">
+                <div className="aspect-[9/16] rounded-xl overflow-hidden shadow-card border border-border">
+                  <img src={baba3} alt="Baba do Bacana — tela de funcionalidades" className="w-full h-full object-cover" />
+                </div>
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-9 h-9 rounded-full bg-primary/15 flex items-center justify-center">
+                    <ClipboardList className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground">Funcionalidades</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>Lista de presença automática por jogo</li>
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>Controle de inadimplência com alertas</li>
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>Painel exclusivo para a diretoria do time</li>
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>Histórico completo de partidas e pagamentos</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Setor 4 — Impacto */}
+            <div className="flex flex-col md:flex-row-reverse gap-8 md:gap-12 items-center mb-10">
+              <div className="w-full max-w-[240px] md:max-w-[260px] flex-shrink-0">
+                <div className="aspect-[9/16] rounded-xl overflow-hidden shadow-card border border-border">
+                  <img src={baba1} alt="Baba do Bacana — tela de impacto" className="w-full h-full object-cover" />
+                </div>
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-9 h-9 rounded-full bg-primary/15 flex items-center justify-center">
+                    <TrendingUp className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold text-foreground">Impacto</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>80% menos mensagens no grupo de WhatsApp</li>
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>5 horas por mês economizadas em retrabalho</li>
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>100% de visibilidade financeira para a diretoria</li>
+                  <li className="flex items-start gap-2"><span className="text-primary mt-0.5">•</span>Membros mais engajados e organizados</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Botão Ver Projeto */}
+            <div className="flex justify-center">
               <Button
                 variant="outline"
-                className="mt-8 rounded-full px-8 py-5 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="rounded-full px-8 py-5 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                 asChild
               >
                 <a href="https://babadobacana.lovable.app/" target="_blank" rel="noopener noreferrer">
