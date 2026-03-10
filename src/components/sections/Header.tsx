@@ -28,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/[0.97] backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link
           to="/"
@@ -64,7 +64,7 @@ export default function Header() {
               >
                 {link.label}
               </button>
-            )
+            ),
           )}
         </nav>
 
@@ -85,7 +85,7 @@ export default function Header() {
       </div>
 
       {isMenuOpen && (
-        <nav className="md:hidden bg-background/95 backdrop-blur-md border-b border-border py-4">
+        <nav className="md:hidden bg-background/[0.97] backdrop-blur-md border-b border-border py-4">
           <div className="container flex flex-col gap-3">
             {navLinks.map((link) =>
               link.isRoute ? (
@@ -105,7 +105,7 @@ export default function Header() {
                 >
                   {link.label}
                 </button>
-              )
+              ),
             )}
 
             <Button
