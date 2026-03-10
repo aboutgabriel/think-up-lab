@@ -68,6 +68,16 @@ const results = [
 ];
 
 export default function BabaDoBacana() {
+  const [showTop, setShowTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   const scrollToContact = () => {
     const element = document.querySelector("#contato");
     if (element) element.scrollIntoView({ behavior: "smooth" });
