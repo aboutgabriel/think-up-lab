@@ -7,7 +7,6 @@ import headerLogo from "@/assets/grpm-logo.png";
 const navLinks = [
   { href: "#solucoes", label: "Nossas Soluções" },
   { href: "#como-funciona", label: "Como Funciona" },
-  { href: "/baba-do-bacana", label: "Sistema de Gestão", isRoute: true },
   { href: "#projetos", label: "Projetos" },
   { href: "#contato", label: "Contato" },
 ];
@@ -47,16 +46,7 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) =>
-            link.isRoute ? (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ) : (
+          {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
@@ -64,8 +54,7 @@ export default function Header() {
               >
                 {link.label}
               </button>
-            ),
-          )}
+          ))}
         </nav>
 
         <Button
@@ -87,17 +76,7 @@ export default function Header() {
       {isMenuOpen && (
         <nav className="md:hidden bg-background/[0.80] backdrop-blur-md border-b border-border py-4">
           <div className="container flex flex-col gap-3">
-            {navLinks.map((link) =>
-              link.isRoute ? (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="text-left text-foreground/70 hover:text-foreground transition-colors py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ) : (
+            {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
@@ -105,8 +84,7 @@ export default function Header() {
                 >
                   {link.label}
                 </button>
-              ),
-            )}
+            ))}
 
             <Button
               className="rounded-full gradient-primary text-primary-foreground w-full mt-2 hover:opacity-90 transition-opacity"
