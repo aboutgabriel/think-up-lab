@@ -55,7 +55,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-xl border-white/20 text-white bg-white/5 hover:bg-white/10 hover:text-white transition-colors px-8 py-6"
+                className="rounded-xl border-primary/20 text-primary bg-primary/5 hover:bg-primary/10 hover:text-primary transition-colors px-8 py-6"
                 onClick={() => {
                   const el = document.querySelector("#como-funciona");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
