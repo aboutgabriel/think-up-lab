@@ -32,7 +32,7 @@ export default function Hero() {
             </h1>
 
             <p
-              className="text-lg md:text-xl text-white/70 mb-8 max-w-xl opacity-0 animate-fade-in"
+              className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl opacity-0 animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
               Transformamos processos manuais e planilhas em sistemas simples, organizados e eficientes.
