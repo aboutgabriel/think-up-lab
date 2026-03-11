@@ -10,13 +10,13 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center pt-24 md:pt-28 pb-20 md:pb-28 overflow-hidden bg-navy text-white"
+      className="relative min-h-screen flex items-center pt-24 md:pt-28 pb-20 md:pb-28 overflow-hidden bg-background text-foreground"
     >
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-primary/10" />
-        <div className="absolute -top-24 -left-24 w-[520px] h-[520px] bg-primary/25 rounded-full blur-3xl opacity-60" />
-        <div className="absolute -bottom-28 -right-28 w-[520px] h-[520px] bg-primary/20 rounded-full blur-3xl opacity-60" />
-        <div className="absolute top-24 right-24 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10" />
+        <div className="absolute -top-24 -left-24 w-[520px] h-[520px] bg-primary/10 rounded-full blur-3xl opacity-40" />
+        <div className="absolute -bottom-28 -right-28 w-[520px] h-[520px] bg-primary/8 rounded-full blur-3xl opacity-40" />
+        <div className="absolute top-24 right-24 w-64 h-64 bg-accent/8 rounded-full blur-3xl opacity-30" />
       </div>
 
       <div className="container">
@@ -26,13 +26,13 @@ export default function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
-              <span className="text-white">Soluções digitais </span>
+              <span className="text-foreground">Soluções digitais </span>
               <span className="text-gradient">sob medida</span>
-              <span className="text-white"> para o seu negócio</span>
+              <span className="text-foreground"> para o seu negócio</span>
             </h1>
 
             <p
-              className="text-lg md:text-xl text-white/70 mb-8 max-w-xl opacity-0 animate-fade-in"
+              className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl opacity-0 animate-fade-in"
               style={{ animationDelay: "0.3s" }}
             >
               Transformamos processos manuais e planilhas em sistemas simples, organizados e eficientes.
@@ -55,7 +55,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="rounded-xl border-white/20 text-white bg-white/5 hover:bg-white/10 hover:text-white transition-colors px-8 py-6"
+                className="rounded-xl border-primary/20 text-primary bg-primary/5 hover:bg-primary/10 hover:text-primary transition-colors px-8 py-6"
                 onClick={() => {
                   const el = document.querySelector("#como-funciona");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
