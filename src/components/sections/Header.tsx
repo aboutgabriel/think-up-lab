@@ -46,16 +46,7 @@ export default function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) =>
-            link.isRoute ? (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ) : (
+          {navLinks.map((link) => (
               <button
                 key={link.href}
                 onClick={() => scrollToSection(link.href)}
@@ -63,8 +54,7 @@ export default function Header() {
               >
                 {link.label}
               </button>
-            ),
-          )}
+          ))}
         </nav>
 
         <Button
