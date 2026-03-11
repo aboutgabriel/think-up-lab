@@ -20,7 +20,7 @@ const values = [
 
 const About = () => {
   return (
-    <section id="sobre" className="py-20 md:py-32">
+    <section id="quem-somos" className="py-20 md:py-32">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-14">
           <span className="inline-block px-3 py-1 rounded-full bg-accent border border-primary/30 text-accent-foreground text-sm font-medium mb-4">

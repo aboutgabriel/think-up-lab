@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import headerLogo from "@/assets/grpm-logo.png";
 
 const navLinks = [
-  { href: "#solucoes", label: "Nossas Soluções" },
+  { href: "#quem-somos", label: "Quem Somos" },
   { href: "#como-funciona", label: "Como Funciona" },
+  { href: "#solucoes", label: "Nossas Soluções" },
   { href: "#projetos", label: "Projetos" },
   { href: "#contato", label: "Contato" },
 ];
