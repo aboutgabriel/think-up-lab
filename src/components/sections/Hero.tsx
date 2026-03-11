@@ -26,9 +26,9 @@ export default function Hero() {
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
-              <span className="text-white">Soluções digitais </span>
+              <span className="text-foreground">Soluções digitais </span>
               <span className="text-gradient">sob medida</span>
-              <span className="text-white"> para o seu negócio</span>
+              <span className="text-foreground"> para o seu negócio</span>
             </h1>
 
             <p
