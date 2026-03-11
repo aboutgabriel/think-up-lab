@@ -10,13 +10,13 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center pt-24 md:pt-28 pb-20 md:pb-28 overflow-hidden bg-navy text-white"
+      className="relative min-h-screen flex items-center pt-24 md:pt-28 pb-20 md:pb-28 overflow-hidden bg-background text-foreground"
     >
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-primary/10" />
-        <div className="absolute -top-24 -left-24 w-[520px] h-[520px] bg-primary/25 rounded-full blur-3xl opacity-60" />
-        <div className="absolute -bottom-28 -right-28 w-[520px] h-[520px] bg-primary/20 rounded-full blur-3xl opacity-60" />
-        <div className="absolute top-24 right-24 w-64 h-64 bg-accent/10 rounded-full blur-3xl opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10" />
+        <div className="absolute -top-24 -left-24 w-[520px] h-[520px] bg-primary/10 rounded-full blur-3xl opacity-40" />
+        <div className="absolute -bottom-28 -right-28 w-[520px] h-[520px] bg-primary/8 rounded-full blur-3xl opacity-40" />
+        <div className="absolute top-24 right-24 w-64 h-64 bg-accent/8 rounded-full blur-3xl opacity-30" />
       </div>
 
       <div className="container">
