@@ -38,9 +38,9 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-
-        <Services />
+        <About />
         <HowItWorks />
+        <Services />
 
         {/* ── Seção: Seu negócio no controle ── */}
         <section className="py-20 md:py-32 bg-card">
@@ -92,7 +92,6 @@ const Index = () => {
           </div>
         </section>
 
-        <About />
         <Projects />
         <Contact />
       </main>
