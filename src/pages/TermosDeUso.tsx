@@ -58,7 +58,7 @@ const TermosDeUso = () => {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">8. Contato</h2>
-              <p>Em caso de dúvidas sobre estes Termos de Uso, entre em contato pelo e-mail: <a href="mailto:contato@thinkuplab.com.br" className="text-primary hover:underline">contato@thinkuplab.com.br</a>.</p>
+              <p>Em caso de dúvidas sobre estes Termos de Uso, entre em contato pelo e-mail: <a href="mailto:thiuplab@gmail.com" className="text-primary hover:underline">thiuplab@gmail.com</a>.</p>
             </section>
           </div>
         </div>

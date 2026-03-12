@@ -101,7 +101,7 @@ const PoliticaDePrivacidade = () => {
               <p>Para questões relacionadas à privacidade e proteção de dados, entre em contato com o responsável:</p>
               <div className="mt-3 p-4 bg-secondary/50 rounded-lg">
                 <p><strong>ThinkUp Lab</strong></p>
-                <p>E-mail: <a href="mailto:contato@thinkuplab.com.br" className="text-primary hover:underline">contato@thinkuplab.com.br</a></p>
+                <p>E-mail: <a href="mailto:thiuplab@gmail.com" className="text-primary hover:underline">thiuplab@gmail.com</a></p>
               </div>
             </section>
 
