@@ -48,7 +48,7 @@ const TermosDeUso = () => {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">6. Modificações dos Termos</h2>
-              <p>A ThinkUp Lab reserva-se o direito de alterar estes Termos de Uso a qualquer momento, sem aviso prévio. As alterações entram em vigor imediatamente após a publicação nesta página. Recomendamos que revise periodicamente este documento.</p>
+              <p>A thinkup LAB reserva-se o direito de alterar estes Termos de Uso a qualquer momento, sem aviso prévio. As alterações entram em vigor imediatamente após a publicação nesta página. Recomendamos que revise periodicamente este documento.</p>
             </section>
 
             <section>
