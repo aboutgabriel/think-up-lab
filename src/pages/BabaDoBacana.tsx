@@ -88,17 +88,17 @@ export default function BabaDoBacana() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-navy text-primary-foreground pt-28 pb-20 md:pt-36 md:pb-28">
+      <section className="bg-background text-foreground pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-sm font-medium text-primary-light mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-sm font-medium text-primary mb-6">
               Para times e babas
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
               Seu time merece mais{" "}
               <span className="text-gradient">organização</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
               Chega de gerenciar pelada pelo WhatsApp. Tenha um sistema
               completo para presença, pagamentos e gestão do seu grupo
               esportivo.
@@ -207,13 +207,13 @@ export default function BabaDoBacana() {
       </section>
 
       {/* Resultados */}
-      <section className="py-20 md:py-28 bg-navy text-primary-foreground">
+      <section className="py-20 md:py-28 bg-background text-foreground">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center mb-14">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               Resultados que fazem diferença
             </h2>
-            <p className="text-primary-foreground/70 text-lg">
+            <p className="text-muted-foreground text-lg">
               Times que usam o sistema ganham tempo e eliminam dor de cabeça.
             </p>
           </div>
@@ -226,12 +226,12 @@ export default function BabaDoBacana() {
                 style={{ animationDelay: `${0.15 * i}s` }}
               >
                 <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-8 h-8 text-primary-light" />
+                  <item.icon className="w-8 h-8 text-primary" />
                 </div>
                 <p className="text-4xl md:text-5xl font-bold text-gradient mb-2">
                   {item.metric}
                 </p>
-                <p className="text-primary-foreground/60 text-sm">
+                <p className="text-muted-foreground text-sm">
                   {item.label}
                 </p>
               </div>
