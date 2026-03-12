@@ -48,7 +48,7 @@ const CookieConsent = () => {
 
   return (
     <div className="fixed bottom-0 inset-x-0 z-50 p-4 md:p-6">
-      <div className="container max-w-4xl mx-auto bg-navy/95 backdrop-blur-sm rounded-xl p-5 md:p-6 shadow-xl border border-white/10">
+      <div className="container max-w-4xl mx-auto bg-primary/95 backdrop-blur-sm rounded-xl p-5 md:p-6 shadow-xl border border-white/10">
         <div className="flex flex-col md:flex-row md:items-center gap-4">
           <div className="flex-1 text-sm text-white/80 leading-relaxed">
             Usamos cookies para melhorar sua experiência e analisar o tráfego do site.
