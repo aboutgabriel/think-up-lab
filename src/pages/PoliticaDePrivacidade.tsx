@@ -13,7 +13,7 @@ const PoliticaDePrivacidade = () => {
           <div className="space-y-8 text-foreground/90 leading-relaxed">
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">1. Introdução</h2>
-              <p>A <strong>ThinkUp Lab</strong> está comprometida com a proteção dos dados pessoais de seus usuários, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018). Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos suas informações.</p>
+              <p>A <strong>thinkup LAB</strong> está comprometida com a proteção dos dados pessoais de seus usuários, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018). Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos suas informações.</p>
             </section>
 
             <section>
