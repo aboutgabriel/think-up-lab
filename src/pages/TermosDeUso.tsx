@@ -43,7 +43,7 @@ const TermosDeUso = () => {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">5. Limitação de Responsabilidade</h2>
-              <p>A ThinkUp Lab não se responsabiliza por danos diretos ou indiretos resultantes do uso ou da impossibilidade de uso do site. O site é disponibilizado "como está", sem garantias de disponibilidade ininterrupta ou ausência de erros.</p>
+              <p>A thinkup LAB não se responsabiliza por danos diretos ou indiretos resultantes do uso ou da impossibilidade de uso do site. O site é disponibilizado "como está", sem garantias de disponibilidade ininterrupta ou ausência de erros.</p>
             </section>
 
             <section>
