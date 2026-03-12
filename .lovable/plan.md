@@ -1,30 +1,31 @@
 
-## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
+## Renomear "ThinkUp Lab" para "thinkup LAB" em todo o projeto
 
-### Alteracoes
+Substituir todas as ocorrências do nome da empresa para a grafia correta: **thinkup LAB**.
 
-**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
+### Arquivos afetados
 
-Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
-- Frame do iPhone com notch/Dynamic Island
-- Tela com header "Dashboard" e hamburger menu
-- 2 KPI cards empilhados (Receita e Pedidos)
-- Mini grafico de barras verticais
-- Mini lista de categorias
-- Mesma paleta de cores do tablet (teal, navy, laranja)
+**1. `index.html`** — Meta tags SEO
+- `<title>`, `og:title`, `twitter:title`: "ThinkUp Lab" → "thinkup LAB"
+- `meta author`, `og:site_name`: idem
 
-**2. Arquivo: `src/pages/Index.tsx`**
+**2. `src/components/sections/Footer.tsx`**
+- Alt da logo: "ThinkUp Lab" → "thinkup LAB"
+- Copyright: "ThinkUp Lab" → "thinkup LAB"
 
-Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
-- Importar `PhoneMockup`
-- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
-- No mobile, empilhar verticalmente ou mostrar so o tablet
+**3. `src/components/sections/Header.tsx`**
+- Alt da logo: "ThinkUp" → "thinkup LAB"
 
-### Detalhes tecnicos
+**4. `src/components/sections/About.tsx`**
+- Texto "A ThinkUp Lab nasceu..." → "A thinkup LAB nasceu..."
 
-- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
-- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
-- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
-- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
+**5. `src/pages/PoliticaDePrivacidade.tsx`**
+- Todas as menções "ThinkUp Lab" → "thinkup LAB" (introdução, seção de contato)
+
+**6. `src/pages/TermosDeUso.tsx`**
+- Todas as menções "ThinkUp Lab" → "thinkup LAB" (seções 1, 2, 3, 5, 6, 7)
+
+**7. `supabase/functions/send-contact-email/index.ts`**
+- "GRPM" → "thinkup LAB" no título do email e no remetente
+
