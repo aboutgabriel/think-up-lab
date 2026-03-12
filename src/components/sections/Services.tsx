@@ -104,25 +104,26 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={service.name}
-              className={`relative shadow-card transition-all duration-300 hover:-translate-y-1 opacity-0 animate-fade-in-up flex flex-col ${
+              className={`relative border-0 shadow-card transition-all duration-300 hover:-translate-y-1 opacity-0 animate-fade-in-up flex flex-col ${
                 service.popular
-                  ? "border-2 border-primary shadow-primary/20"
-                  : "border-0 bg-card"
+                  ? "ring-2 ring-primary shadow-primary/20"
+                  : "bg-card"
               }`}
               style={{ animationDelay: `${0.1 * index}s` }}
             >
               {/* Barra sutil no topo */}
               <div className={`h-1 w-full rounded-t-lg ${service.popular ? "gradient-primary" : "bg-primary/20"}`} />
 
-              <CardHeader className="pb-2 pt-6">
-                {service.popular && (
-                  <div className="flex justify-center mb-3">
-                    <div className="flex items-center gap-1 px-3 py-1 rounded-full gradient-primary text-primary-foreground text-xs font-medium">
-                      <Sparkles className="w-3 h-3" />
-                      Mais popular
-                    </div>
+              {service.popular && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                  <div className="flex items-center gap-1 px-3 py-1 rounded-full gradient-primary text-primary-foreground text-xs font-medium">
+                    <Sparkles className="w-3 h-3" />
+                    Mais popular
                   </div>
-                )}
+                </div>
+              )}
+
+              <CardHeader className="pb-2 pt-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <service.icon className="w-5 h-5 text-primary" />
