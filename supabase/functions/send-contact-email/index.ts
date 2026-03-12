@@ -39,7 +39,7 @@ serve(async (req) => {
     }
 
     const htmlBody = `
-      <h2>Novo contato pelo site GRPM</h2>
+      <h2>Novo contato pelo site thinkup LAB</h2>
       <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
         <tr>
           <td style="padding: 8px 12px; font-weight: bold; border-bottom: 1px solid #eee;">Nome</td>
