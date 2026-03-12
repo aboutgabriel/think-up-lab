@@ -207,13 +207,13 @@ export default function BabaDoBacana() {
       </section>
 
       {/* Resultados */}
-      <section className="py-20 md:py-28 bg-navy text-primary-foreground">
+      <section className="py-20 md:py-28 bg-background text-foreground">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center mb-14">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               Resultados que fazem diferença
             </h2>
-            <p className="text-primary-foreground/70 text-lg">
+            <p className="text-muted-foreground text-lg">
               Times que usam o sistema ganham tempo e eliminam dor de cabeça.
             </p>
           </div>
@@ -226,12 +226,12 @@ export default function BabaDoBacana() {
                 style={{ animationDelay: `${0.15 * i}s` }}
               >
                 <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-8 h-8 text-primary-light" />
+                  <item.icon className="w-8 h-8 text-primary" />
                 </div>
                 <p className="text-4xl md:text-5xl font-bold text-gradient mb-2">
                   {item.metric}
                 </p>
-                <p className="text-primary-foreground/60 text-sm">
+                <p className="text-muted-foreground text-sm">
                   {item.label}
                 </p>
               </div>
