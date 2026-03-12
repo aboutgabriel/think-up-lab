@@ -13,7 +13,7 @@ const TermosDeUso = () => {
           <div className="space-y-8 text-foreground/90 leading-relaxed">
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">1. Objeto e Aceitação</h2>
-              <p>Estes Termos de Uso regulam o acesso e a utilização do site e dos serviços oferecidos pela <strong>ThinkUp Lab</strong>. Ao acessar ou utilizar nosso site, você concorda integralmente com estes termos. Caso não concorde, recomendamos que não utilize nossos serviços.</p>
+              <p>Estes Termos de Uso regulam o acesso e a utilização do site e dos serviços oferecidos pela <strong>thinkup LAB</strong>. Ao acessar ou utilizar nosso site, você concorda integralmente com estes termos. Caso não concorde, recomendamos que não utilize nossos serviços.</p>
             </section>
 
             <section>
