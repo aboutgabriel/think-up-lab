@@ -18,7 +18,7 @@ const TermosDeUso = () => {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">2. Descrição dos Serviços</h2>
-              <p>A ThinkUp Lab desenvolve sistemas web sob medida para pequenas e médias empresas (PMEs), transformando processos manuais e planilhas em soluções digitais eficientes. Os serviços incluem, mas não se limitam a:</p>
+              <p>A thinkup LAB desenvolve sistemas web sob medida para pequenas e médias empresas (PMEs), transformando processos manuais e planilhas em soluções digitais eficientes. Os serviços incluem, mas não se limitam a:</p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li>Desenvolvimento de sistemas de gestão personalizados</li>
                 <li>Digitalização de processos empresariais</li>
