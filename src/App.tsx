@@ -19,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <CookieConsent />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/projetos" element={<Projetos />} />
