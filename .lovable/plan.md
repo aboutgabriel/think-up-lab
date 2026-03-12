@@ -1,34 +1,30 @@
 
+## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-## Adicionar Banner de Consentimento de Cookies (LGPD)
+Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
 
-### O que será feito
+### Alteracoes
 
-Um banner fixo na parte inferior da tela que aparece na primeira visita, informando sobre o uso de cookies e permitindo ao usuário aceitar ou recusar.
+**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
 
-### Comportamento
+Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
+- Frame do iPhone com notch/Dynamic Island
+- Tela com header "Dashboard" e hamburger menu
+- 2 KPI cards empilhados (Receita e Pedidos)
+- Mini grafico de barras verticais
+- Mini lista de categorias
+- Mesma paleta de cores do tablet (teal, navy, laranja)
 
-- Na primeira visita, o Google Analytics **não carrega** até o usuário aceitar
-- Se aceitar: ativa o GA e salva a preferência no `localStorage`
-- Se recusar: não ativa o GA e salva a preferência
-- Nas visitas seguintes, respeita a escolha salva (não mostra o banner novamente)
-- Link para a Política de Privacidade dentro do banner
+**2. Arquivo: `src/pages/Index.tsx`**
 
-### Arquivos
+Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
+- Importar `PhoneMockup`
+- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
+- No mobile, empilhar verticalmente ou mostrar so o tablet
 
-**1. `src/components/CookieConsent.tsx`** (novo)
-- Banner fixo no rodapé com texto explicativo
-- Botões "Aceitar" e "Recusar"
-- Link para `/politica-de-privacidade`
-- Gerencia `localStorage` para persistir a escolha
+### Detalhes tecnicos
 
-**2. `index.html`**
-- Remover o script do Google Analytics do `<head>` (será carregado dinamicamente via JS apenas após consentimento)
-
-**3. `src/App.tsx`**
-- Importar e renderizar o `<CookieConsent />` globalmente
-
-### Design
-- Fundo escuro semi-transparente, texto claro, botões com o estilo do site (gradient-primary para aceitar, outline para recusar)
-- Responsivo: empilha os botões no mobile
-
+- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
+- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
+- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
+- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
