@@ -28,7 +28,7 @@ const TermosDeUso = () => {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">3. Propriedade Intelectual</h2>
-              <p>Todo o conteúdo presente neste site — incluindo textos, imagens, logotipos, layouts e código-fonte — é de propriedade da ThinkUp Lab ou de seus licenciadores, sendo protegido pela legislação brasileira de direitos autorais e propriedade intelectual. É vedada a reprodução, distribuição ou modificação sem autorização prévia por escrito.</p>
+              <p>Todo o conteúdo presente neste site — incluindo textos, imagens, logotipos, layouts e código-fonte — é de propriedade da thinkup LAB ou de seus licenciadores, sendo protegido pela legislação brasileira de direitos autorais e propriedade intelectual. É vedada a reprodução, distribuição ou modificação sem autorização prévia por escrito.</p>
             </section>
 
             <section>
