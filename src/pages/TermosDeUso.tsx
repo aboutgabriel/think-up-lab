@@ -13,12 +13,12 @@ const TermosDeUso = () => {
           <div className="space-y-8 text-foreground/90 leading-relaxed">
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">1. Objeto e Aceitação</h2>
-              <p>Estes Termos de Uso regulam o acesso e a utilização do site e dos serviços oferecidos pela <strong>ThinkUp Lab</strong>. Ao acessar ou utilizar nosso site, você concorda integralmente com estes termos. Caso não concorde, recomendamos que não utilize nossos serviços.</p>
+              <p>Estes Termos de Uso regulam o acesso e a utilização do site e dos serviços oferecidos pela <strong>thinkup LAB</strong>. Ao acessar ou utilizar nosso site, você concorda integralmente com estes termos. Caso não concorde, recomendamos que não utilize nossos serviços.</p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">2. Descrição dos Serviços</h2>
-              <p>A ThinkUp Lab desenvolve sistemas web sob medida para pequenas e médias empresas (PMEs), transformando processos manuais e planilhas em soluções digitais eficientes. Os serviços incluem, mas não se limitam a:</p>
+              <p>A thinkup LAB desenvolve sistemas web sob medida para pequenas e médias empresas (PMEs), transformando processos manuais e planilhas em soluções digitais eficientes. Os serviços incluem, mas não se limitam a:</p>
               <ul className="list-disc pl-6 mt-2 space-y-1">
                 <li>Desenvolvimento de sistemas de gestão personalizados</li>
                 <li>Digitalização de processos empresariais</li>
@@ -28,7 +28,7 @@ const TermosDeUso = () => {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">3. Propriedade Intelectual</h2>
-              <p>Todo o conteúdo presente neste site — incluindo textos, imagens, logotipos, layouts e código-fonte — é de propriedade da ThinkUp Lab ou de seus licenciadores, sendo protegido pela legislação brasileira de direitos autorais e propriedade intelectual. É vedada a reprodução, distribuição ou modificação sem autorização prévia por escrito.</p>
+              <p>Todo o conteúdo presente neste site — incluindo textos, imagens, logotipos, layouts e código-fonte — é de propriedade da thinkup LAB ou de seus licenciadores, sendo protegido pela legislação brasileira de direitos autorais e propriedade intelectual. É vedada a reprodução, distribuição ou modificação sem autorização prévia por escrito.</p>
             </section>
 
             <section>
@@ -43,17 +43,17 @@ const TermosDeUso = () => {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">5. Limitação de Responsabilidade</h2>
-              <p>A ThinkUp Lab não se responsabiliza por danos diretos ou indiretos resultantes do uso ou da impossibilidade de uso do site. O site é disponibilizado "como está", sem garantias de disponibilidade ininterrupta ou ausência de erros.</p>
+              <p>A thinkup LAB não se responsabiliza por danos diretos ou indiretos resultantes do uso ou da impossibilidade de uso do site. O site é disponibilizado "como está", sem garantias de disponibilidade ininterrupta ou ausência de erros.</p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">6. Modificações dos Termos</h2>
-              <p>A ThinkUp Lab reserva-se o direito de alterar estes Termos de Uso a qualquer momento, sem aviso prévio. As alterações entram em vigor imediatamente após a publicação nesta página. Recomendamos que revise periodicamente este documento.</p>
+              <p>A thinkup LAB reserva-se o direito de alterar estes Termos de Uso a qualquer momento, sem aviso prévio. As alterações entram em vigor imediatamente após a publicação nesta página. Recomendamos que revise periodicamente este documento.</p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">7. Foro e Legislação Aplicável</h2>
-              <p>Estes Termos de Uso são regidos pela legislação da República Federativa do Brasil. Fica eleito o foro da comarca da sede da ThinkUp Lab para dirimir quaisquer controvérsias decorrentes deste documento, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
+              <p>Estes Termos de Uso são regidos pela legislação da República Federativa do Brasil. Fica eleito o foro da comarca da sede da thinkup LAB para dirimir quaisquer controvérsias decorrentes deste documento, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
             </section>
 
             <section>

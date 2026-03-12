@@ -13,7 +13,7 @@ const PoliticaDePrivacidade = () => {
           <div className="space-y-8 text-foreground/90 leading-relaxed">
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">1. Introdução</h2>
-              <p>A <strong>ThinkUp Lab</strong> está comprometida com a proteção dos dados pessoais de seus usuários, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018). Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos suas informações.</p>
+              <p>A <strong>thinkup LAB</strong> está comprometida com a proteção dos dados pessoais de seus usuários, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018). Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos suas informações.</p>
             </section>
 
             <section>
@@ -100,7 +100,7 @@ const PoliticaDePrivacidade = () => {
               <h2 className="text-xl font-semibold text-foreground mb-3">9. Contato do Responsável</h2>
               <p>Para questões relacionadas à privacidade e proteção de dados, entre em contato com o responsável:</p>
               <div className="mt-3 p-4 bg-secondary/50 rounded-lg">
-                <p><strong>ThinkUp Lab</strong></p>
+                <p><strong>thinkup LAB</strong></p>
                 <p>E-mail: <a href="mailto:thiuplab@gmail.com" className="text-primary hover:underline">thiuplab@gmail.com</a></p>
               </div>
             </section>

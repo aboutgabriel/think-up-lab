@@ -23,7 +23,7 @@ const Footer = () => {
             <div className="mb-2">
               <img
                 src={footerLogo}
-                alt="ThinkUp Lab"
+                alt="thinkup LAB"
                 className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 ease-out hover:scale-105 hover:opacity-90"
               />
             </div>
@@ -72,7 +72,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 mt-10 pt-6 text-center text-sm text-white/40">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-            <p>© {new Date().getFullYear()} ThinkUp Lab. Todos os direitos reservados.</p>
+            <p>© {new Date().getFullYear()} thinkup LAB. Todos os direitos reservados.</p>
             <span className="hidden sm:inline">·</span>
             <div className="flex gap-4">
               <Link to="/termos-de-uso" className="hover:text-white/70 transition-colors">Termos de Uso</Link>

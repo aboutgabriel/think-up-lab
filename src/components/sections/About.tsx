@@ -31,7 +31,7 @@ const About = () => {
             <span className="text-gradient">resolve de verdade</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            A ThinkUp Lab nasceu para transformar ideias em soluções digitais práticas. 
+            A thinkup LAB nasceu para transformar ideias em soluções digitais práticas. 
             Somos especializados em criar sistemas web e aplicativos que simplificam a rotina 
             de pequenos e médios negócios — do planejamento ao lançamento.
           </p>
