@@ -1,39 +1,30 @@
 
+## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-## Criar páginas de Termos de Uso e Política de Privacidade (LGPD)
+Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
 
-### Arquivos novos
+### Alteracoes
 
-**1. `src/pages/TermosDeUso.tsx`**
-Página com os Termos de Uso da ThinkUp Lab, cobrindo:
-- Objeto e aceitação dos termos
-- Descrição dos serviços (sistemas web para PMEs)
-- Propriedade intelectual
-- Limitação de responsabilidade
-- Modificações dos termos
-- Foro e legislação aplicável (Brasil)
+**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
 
-**2. `src/pages/PoliticaDePrivacidade.tsx`**
-Página com a Política de Privacidade conforme LGPD, cobrindo:
-- Dados coletados (formulário de contato: nome, empresa, contato, descrição do problema + cookies/analytics)
-- Finalidade do tratamento
-- Base legal (consentimento e legítimo interesse)
-- Compartilhamento com terceiros (Google Analytics)
-- Direitos do titular (acesso, correção, exclusão, portabilidade)
-- Retenção de dados
-- Cookies e tecnologias de rastreamento
-- Contato do responsável (email placeholder `contato@thinkuplab.com.br` — ajustável depois)
+Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
+- Frame do iPhone com notch/Dynamic Island
+- Tela com header "Dashboard" e hamburger menu
+- 2 KPI cards empilhados (Receita e Pedidos)
+- Mini grafico de barras verticais
+- Mini lista de categorias
+- Mesma paleta de cores do tablet (teal, navy, laranja)
 
-### Arquivos alterados
+**2. Arquivo: `src/pages/Index.tsx`**
 
-**3. `src/App.tsx`**
-Adicionar rotas `/termos-de-uso` e `/politica-de-privacidade`.
+Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
+- Importar `PhoneMockup`
+- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
+- No mobile, empilhar verticalmente ou mostrar so o tablet
 
-**4. `src/components/sections/Footer.tsx`**
-Adicionar links "Termos de Uso" e "Política de Privacidade" na barra inferior do footer, ao lado do copyright.
+### Detalhes tecnicos
 
-### Design
-- Ambas as páginas seguem o layout do site: Header no topo, Footer embaixo, conteúdo em `container` com tipografia consistente.
-- Texto em seções com headings (`h2`/`h3`) e parágrafos estilizados com as classes do design system existente.
-- Última atualização com data atual.
-
+- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
+- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
+- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
+- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena
