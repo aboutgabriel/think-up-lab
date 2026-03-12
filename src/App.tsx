@@ -9,6 +9,7 @@ import BabaDoBacana from "./pages/BabaDoBacana";
 import TermosDeUso from "./pages/TermosDeUso";
 import PoliticaDePrivacidade from "./pages/PoliticaDePrivacidade";
 import NotFound from "./pages/NotFound";
+import CookieConsent from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
