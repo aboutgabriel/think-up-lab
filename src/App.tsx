@@ -10,6 +10,7 @@ import TermosDeUso from "./pages/TermosDeUso";
 import PoliticaDePrivacidade from "./pages/PoliticaDePrivacidade";
 import NotFound from "./pages/NotFound";
 import CookieConsent from "./components/CookieConsent";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
