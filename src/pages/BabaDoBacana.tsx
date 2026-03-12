@@ -88,17 +88,17 @@ export default function BabaDoBacana() {
       <Header />
 
       {/* Hero */}
-      <section className="bg-navy text-primary-foreground pt-28 pb-20 md:pt-36 md:pb-28">
+      <section className="bg-background text-foreground pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-sm font-medium text-primary-light mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-sm font-medium text-primary mb-6">
               Para times e babas
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
               Seu time merece mais{" "}
               <span className="text-gradient">organização</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
               Chega de gerenciar pelada pelo WhatsApp. Tenha um sistema
               completo para presença, pagamentos e gestão do seu grupo
               esportivo.
