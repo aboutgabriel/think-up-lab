@@ -68,7 +68,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: 'GRPM Site <onboarding@resend.dev>',
-        to: ['contatogrpm@gmail.com'],
+        to: ['thiuplab@gmail.com'],
         subject: `Novo contato: ${name.trim()}`,
         html: htmlBody,
       }),
