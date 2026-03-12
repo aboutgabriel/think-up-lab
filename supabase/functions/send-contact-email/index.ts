@@ -67,7 +67,7 @@ serve(async (req) => {
         'Authorization': `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'GRPM Site <onboarding@resend.dev>',
+        from: 'thinkup LAB Site <onboarding@resend.dev>',
         to: ['thiuplab@gmail.com'],
         subject: `Novo contato: ${name.trim()}`,
         html: htmlBody,

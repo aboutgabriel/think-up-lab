@@ -41,7 +41,7 @@ export default function Header() {
         >
           <img
             src={headerLogo}
-            alt="ThinkUp"
+            alt="thinkup LAB"
             className="h-10 md:h-14 w-auto object-contain transition-transform duration-200 hover:scale-[1.02]"
           />
         </Link>

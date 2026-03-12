@@ -53,7 +53,7 @@ const TermosDeUso = () => {
 
             <section>
               <h2 className="text-xl font-semibold text-foreground mb-3">7. Foro e Legislação Aplicável</h2>
-              <p>Estes Termos de Uso são regidos pela legislação da República Federativa do Brasil. Fica eleito o foro da comarca da sede da ThinkUp Lab para dirimir quaisquer controvérsias decorrentes deste documento, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
+              <p>Estes Termos de Uso são regidos pela legislação da República Federativa do Brasil. Fica eleito o foro da comarca da sede da thinkup LAB para dirimir quaisquer controvérsias decorrentes deste documento, com renúncia expressa a qualquer outro, por mais privilegiado que seja.</p>
             </section>
 
             <section>
