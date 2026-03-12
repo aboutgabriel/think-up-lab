@@ -23,7 +23,7 @@ const Footer = () => {
             <div className="mb-2">
               <img
                 src={footerLogo}
-                alt="ThinkUp Lab"
+                alt="thinkup LAB"
                 className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 ease-out hover:scale-105 hover:opacity-90"
               />
             </div>
