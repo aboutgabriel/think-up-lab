@@ -12,6 +12,9 @@ import babaBacana3 from "@/assets/baba-bacana-3.jpeg";
 import agendaCarnaval1 from "@/assets/agenda-carnaval-1.jpeg";
 import agendaCarnaval2 from "@/assets/agenda-carnaval-2.jpeg";
 import agendaCarnaval3 from "@/assets/agenda-carnaval-3.jpeg";
+import tietasF71 from "@/assets/tietas-f7-1.jpeg";
+import tietasF72 from "@/assets/tietas-f7-2.jpeg";
+import tietasF73 from "@/assets/tietas-f7-3.jpeg";
 
 const projects = [
   {
@@ -50,6 +53,18 @@ const projects = [
       "Organização personalizada da agenda",
     ],
   },
+  {
+    name: "Tietas F7",
+    description: "Site institucional para time de futebol LGBTQIAPN+",
+    link: "https://tietasf7.lovable.app/",
+    screenshots: [tietasF71, tietasF72, tietasF73],
+    features: [
+      "História e missão do time",
+      "Tietas na imprensa",
+      "Campeonatos e conquistas",
+      "Área do jogador",
+    ],
+  },
 ];
 
 const Projects = () => {
@@ -66,7 +81,7 @@ const Projects = () => {
         </div>
 
         {/* Grid responsivo: 1 coluna mobile, 3 colunas desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {projects.map((project) => (
             <Card key={project.name} className="overflow-hidden border-0 shadow-card">
               <CardContent className="p-0">

@@ -1,29 +1,30 @@
 
+## Adicionar iPhone ao lado do iPad na secao de Dashboard
 
-## Adicionar Tietas F7 aos projetos desenvolvidos
+Criar um novo componente `PhoneMockup` com um SVG de iPhone mostrando uma versao mobile do dashboard, e posicionar os dois dispositivos lado a lado.
 
-### Alterações
+### Alteracoes
 
-1. **Copiar as 3 imagens** para `src/assets/` como `tietas-f7-1.jpeg`, `tietas-f7-2.jpeg`, `tietas-f7-3.jpeg`
+**1. Novo arquivo: `src/components/ui/PhoneMockup.tsx`**
 
-2. **`src/components/sections/Projects.tsx`** — Adicionar o Tietas F7 ao array `projects` com:
-   - Nome: "Tietas F7"
-   - Descrição: "Site institucional para time de futebol LGBTQIAPN+"
-   - Link: https://tietasf7.lovable.app/
-   - Screenshots: as 3 imagens
-   - Features: História do time, Portal de notícias/imprensa, Área do jogador, Campeonatos
+Criar um SVG de iPhone com proporcoes realistas (~180x360 viewBox) contendo uma versao simplificada do dashboard mobile:
+- Frame do iPhone com notch/Dynamic Island
+- Tela com header "Dashboard" e hamburger menu
+- 2 KPI cards empilhados (Receita e Pedidos)
+- Mini grafico de barras verticais
+- Mini lista de categorias
+- Mesma paleta de cores do tablet (teal, navy, laranja)
 
-3. **`src/pages/Projetos.tsx`** — Adicionar o Tietas F7 ao array `cases` com:
-   - Tag: "Site Institucional"
-   - Pain: "Dar visibilidade e identidade digital a um time de futebol inclusivo, centralizando informações sobre o time, conquistas e presença na mídia."
-   - Solution: "Site institucional com história do time, cobertura de imprensa, informações sobre campeonatos e área exclusiva para jogadores."
-   - Features: História e missão do time, Tietas na imprensa, Campeonatos e conquistas, Área do jogador
-   - Impact: Maior visibilidade e alcance, Identidade digital profissional, Centralização de informações
+**2. Arquivo: `src/pages/Index.tsx`**
 
-4. **Grid na home** — Ajustar para `md:grid-cols-2 lg:grid-cols-4` (4 projetos lado a lado em telas grandes) ou manter `md:grid-cols-3` com wrap natural para 2+2.
+Atualizar a area de dispositivos (linha 69-73) para mostrar os dois mockups juntos:
+- Importar `PhoneMockup`
+- Trocar o layout para um `flex` com o tablet maior a esquerda e o iPhone menor a direita, levemente sobreposto e deslocado para baixo, criando um efeito de profundidade
+- No mobile, empilhar verticalmente ou mostrar so o tablet
 
-### Conteúdo baseado nos screenshots
-- Tela 1: Hero com foto do time, logo, slogan "No nosso futebol não há espaço para preconceitos"
-- Tela 2: Seção "Tietas na Imprensa" com cards de matérias (Bahia Notícia, Dois Terços, Ligay)
-- Tela 3: Menu mobile com seções Home, História, Campeonatos, Área do Jogador
+### Detalhes tecnicos
 
+- O iPhone tera uma animacao `animate-float` com delay diferente do tablet para criar movimento assincrono
+- O iPhone ficara posicionado com `relative` e offsets negativos (`-ml-8 mt-12`) para parecer que esta "na frente" do tablet
+- O componente `TabletMockup` sera ajustado em tamanho (`max-w-md`) para acomodar o iPhone ao lado
+- No mobile (`md:hidden`/`hidden md:block`), o iPhone sera escondido ou reduzido para nao sobrecarregar a tela pequena

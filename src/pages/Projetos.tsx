@@ -15,6 +15,9 @@ import babaBacana3 from "@/assets/baba-bacana-3.jpeg";
 import agendaCarnaval1 from "@/assets/agenda-carnaval-1.jpeg";
 import agendaCarnaval2 from "@/assets/agenda-carnaval-2.jpeg";
 import agendaCarnaval3 from "@/assets/agenda-carnaval-3.jpeg";
+import tietasF71 from "@/assets/tietas-f7-1.jpeg";
+import tietasF72 from "@/assets/tietas-f7-2.jpeg";
+import tietasF73 from "@/assets/tietas-f7-3.jpeg";
 
 type Case = {
   name: string;
@@ -86,6 +89,26 @@ const cases: Case[] = [
       "Planejamento mais eficiente",
       "Melhor aproveitamento do evento",
       "Centralização das informações em um único lugar",
+    ],
+  },
+  {
+    name: "Tietas F7",
+    tag: "Site Institucional",
+    link: "https://tietasf7.lovable.app/",
+    screenshots: [tietasF71, tietasF72, tietasF73],
+    pain: "Dar visibilidade e identidade digital a um time de futebol inclusivo, centralizando informações sobre o time, conquistas e presença na mídia.",
+    solution:
+      "Site institucional com história do time, cobertura de imprensa, informações sobre campeonatos e área exclusiva para jogadores.",
+    features: [
+      "História e missão do time",
+      "Tietas na imprensa",
+      "Campeonatos e conquistas",
+      "Área do jogador",
+    ],
+    impact: [
+      "Maior visibilidade e alcance",
+      "Identidade digital profissional",
+      "Centralização de informações",
     ],
   },
 ];
