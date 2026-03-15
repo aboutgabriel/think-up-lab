@@ -15,6 +15,9 @@ import babaBacana3 from "@/assets/baba-bacana-3.jpeg";
 import agendaCarnaval1 from "@/assets/agenda-carnaval-1.jpeg";
 import agendaCarnaval2 from "@/assets/agenda-carnaval-2.jpeg";
 import agendaCarnaval3 from "@/assets/agenda-carnaval-3.jpeg";
+import tietasF71 from "@/assets/tietas-f7-1.jpeg";
+import tietasF72 from "@/assets/tietas-f7-2.jpeg";
+import tietasF73 from "@/assets/tietas-f7-3.jpeg";
 
 type Case = {
   name: string;
