@@ -53,6 +53,18 @@ const projects = [
       "Organização personalizada da agenda",
     ],
   },
+  {
+    name: "Tietas F7",
+    description: "Site institucional para time de futebol LGBTQIAPN+",
+    link: "https://tietasf7.lovable.app/",
+    screenshots: [tietasF71, tietasF72, tietasF73],
+    features: [
+      "História e missão do time",
+      "Tietas na imprensa",
+      "Campeonatos e conquistas",
+      "Área do jogador",
+    ],
+  },
 ];
 
 const Projects = () => {
